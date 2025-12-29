@@ -8,7 +8,7 @@
     <title>tsuki :3</title>
   </head>
   <body
-    class="flex items-center justify-center w-screen h-screen overflow-hidden font-mono select-none"
+    class="flex items-center justify-center min-w-screen max-w-screen min-h-screen max-h-screen overflow-hidden font-mono select-none"
   >
     <div class="fixed -z-1 inset-0">
       <img
@@ -17,7 +17,7 @@
       />
     </div>
     <div
-      class="fixed right-5 top-5 bg-white/10 shadow-lg rounded-xl backdrop-blur-xs p-5"
+      class="fixed right-5 top-5 bg-white/10 shadow-lg rounded-xl backdrop-blur-xs p-5 max-w-80"
       id="statuscafe"
     >
       <div class="font-bold text-gray-200/60 text-[11px]" id="statuscafe-info">
@@ -36,7 +36,7 @@
               return;
             }
             document.getElementById("statuscafe-info").innerHTML =
-              '<a target="_blank" href="https://status.cafe/users/tsukian" class="no-underline hover:underline hover:text-gray-200/70 decoration-wavy">status.cafe</a>' +
+              '<a target="_blank" href="https://status.cafe" class="no-underline hover:underline hover:text-gray-200/70 decoration-wavy">status.cafe</a>' +
               " " +
               r.face +
               " • " +
@@ -45,7 +45,23 @@
           });
       </script>
     </div>
-    <div id="bottomthings"></div>
+    <div
+      id="bottomthings"
+      class="fixed bottom-3 flex flex-col items-center group"
+    >
+      <p
+        class="text-sm text-gray-200/60 transition opacity-100 group-hover:opacity-20 group-hover:-translate-y-2"
+      >
+        hover me!!
+      </p>
+      <span
+        class="flex flex-row justify-center text-gray-200/70 text-base group-hover:opacity-100 opacity-0 transition translate-y-2 group-hover:-translate-y-3"
+      >
+        <a href="/form" class="no-underline hover:underline decoration-wavy"
+          >form</a
+        >
+      </span>
+    </div>
     <!-- nothing here yet, planning on adding more sites!!!!!!!! -->
     <center class="flex flex-col gap-2 items-center pl-3 pr-3">
       <pre class="text-gray-100/80 text-shadow-lg text-base w-fit text-left">
@@ -56,7 +72,7 @@
 </pre
       >
       <hr class="text-white opacity-60 h-2" style="width: calc(100% + 20px)" />
-      <span class="text-gray-200/90 text-base">
+      <span class="text-gray-200/90 text-lg">
         <a
           href="/discord"
           target="_blank"
