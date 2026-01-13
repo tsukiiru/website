@@ -12,8 +12,13 @@
     },
     {
       "source": "/twitter",
-      "destination": "https://x.com/lunar1um",
+      "destination": "https://x.com/parsleydew",
       "permanent": true
+    },
+    {
+	"source": "/email",
+	"destination": "mailto:parsley.dew@proton.me",
+	"permanent": true
     }
   ]
 }
