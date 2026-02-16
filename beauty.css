@@ -1,0 +1,323 @@
+:root {
+  --window-bg-color: #ffeecc;
+  --window-bg-color-alt: #ffeeccaa;
+  --window-title-bg-color: #ffeecc;
+  --window-text-color: #46425e;
+  --window-text-color-alt: #46425eaa;
+  --blush: #ff6973;
+  /* really? yes :3 */
+  --earthling: #00b9be;
+}
+
+body {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 8px;
+  font-family: "CozetteVector", "Phosphor";
+}
+
+i {
+  user-select: none;
+}
+
+.wallpaper {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  inset: 0;
+  filter: blur(5px);
+}
+
+.p-top {
+  display: flex;
+  align-items: end;
+  flex-direction: row;
+  justify-content: space-between;
+
+  > .navigate {
+    display: flex;
+    align-items: start;
+    padding-left: 16px;
+    font-size: 16px;
+    gap: 8px;
+    color: var(--window-bg-color);
+    transition: background;
+    font-weight: bold;
+    user-select: none;
+
+    > a {
+      color: inherit;
+      text-decoration: none;
+
+      &[href]:hover {
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: var(--window-bg-color-alt);
+      }
+    }
+  }
+}
+
+.window,
+.status-cafe {
+  display: grid;
+  grid-template-columns: 8px 1fr 8px;
+  grid-template-rows: 8px 24px 1fr 8px;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+
+  > .tl {
+    background: url("./images/top-left-corner.png");
+    width: 8px;
+    height: 8px;
+  }
+
+  > .tr {
+    background: url("./images/top-right-corner.png");
+    width: 8px;
+    height: 8px;
+  }
+
+  > .br {
+    background: url("./images/bottom-right-corner.png");
+    width: 8px;
+    height: 8px;
+  }
+
+  > .bl {
+    background: url("./images/bottom-left-corner.png");
+    width: 8px;
+    height: 8px;
+  }
+
+  > .t {
+    background: url("./images/top-border.png") repeat-x;
+  }
+
+  > .b {
+    background: url("./images/bottom-border.png") repeat-x;
+  }
+
+  > .l {
+    background: url("./images/left-border.png") repeat-y;
+  }
+
+  > .r {
+    background: url("./images/right-border.png") repeat-y;
+  }
+
+  .exit-button {
+    background: url("./images/exit-button.png");
+    width: 16px;
+    height: 16px;
+  }
+
+  .rectangular-thing {
+    background: url("./images/rectangle.png");
+    width: 16px;
+    height: 16px;
+  }
+
+  .minus-thing {
+    background: url("./images/minus.png");
+    width: 16px;
+    height: 16px;
+  }
+
+  /* yeah,, i dont know what those things are called */
+}
+
+.window {
+  > .content {
+    background-color: var(--window-bg-color);
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 16px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    > pre {
+      font-size: 16px;
+      color: var(--window-text-color);
+      height: 100%;
+      width: 100%;
+      text-align: left;
+      line-height: 1.9em;
+      margin: 0;
+      font-weight: 600;
+      text-wrap-mode: wrap;
+      font-family: inherit;
+
+      i {
+        color: var(--window-text-color-alt);
+      }
+
+      b {
+        color: var(--blush);
+      }
+
+      em {
+        color: var(--earthling);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        text-decoration-skip-ink: none;
+        /*
+        &:has(i[class^="ph"]) {
+          display: inline-flex;
+          align-items: center;
+          height: fit-content;
+        }
+*/
+        &:hover {
+          text-decoration: underline;
+          text-decoration-style: wavy;
+          text-decoration-color: var(--window-text-color-alt);
+        }
+      }
+
+      span {
+        color: inherit;
+      }
+    }
+  }
+
+  > .title {
+    background: var(--window-title-bg-color);
+    display: grid;
+    grid-template-columns: 1fr 16px;
+    grid-template-rows: 1fr;
+    align-content: center;
+    align-items: center;
+    padding-left: 4px;
+    padding-right: 4px;
+    user-select: none;
+
+    > span {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--window-text-color);
+      text-align: center;
+      vertical-align: middle;
+      margin: 0;
+      letter-spacing: 2pt;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.status-cafe {
+  > .content {
+    background-color: var(--window-bg-color);
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 2px;
+    display: grid;
+    grid-template-rows: 12px 1fr;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    font-weight: bold;
+
+    > .info {
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--blush);
+      user-select: none;
+    }
+
+    > .full {
+      font-size: 15px;
+      color: var(--window-text-color);
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  > .title {
+    background: var(--window-title-bg-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-content: center;
+    align-items: center;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    > a {
+      font-size: 15px;
+      font-weight: bold;
+      color: var(--window-text-color);
+      text-align: center;
+      vertical-align: middle;
+      margin: 0;
+      letter-spacing: 2pt;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-decoration-skip-ink: none;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--window-text-color-alt);
+        text-decoration-style: wavy;
+      }
+    }
+  }
+}
+
+.credit {
+  text-align: right;
+  color: var(--window-bg-color-alt);
+  padding-right: 12px;
+  font-size: 15px;
+  user-select: none;
+  font-style: italic;
+}
+
+.spinny {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  color: var(--window-bg-color);
+  font-family: asciid;
+  user-select: none;
+
+  > .content {
+    display: inline-block;
+    font-size: 35px;
+    color: inherit;
+    text-decoration: none;
+    animation: 4s linear infinite running spinny;
+  }
+
+  transition: transform ease-in-out 0.4s;
+
+  &:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: var(--earthling);
+    cursor: pointer;
+    text-shadow: 2px 2px 4px var(--earthling);
+    > .content {
+      animation-duration: 2s;
+    }
+  }
+}
+
+@keyframes spinny {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
