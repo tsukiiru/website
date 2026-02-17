@@ -1,3 +1,8 @@
+@font-face {
+  font-family: CozetteVector;
+  src: url(./assets/fonts/CozetteVector.ttf);
+}
+
 :root {
   --window-bg-color: #ffeecc;
   --window-bg-color-alt: #ffeeccaa;
@@ -19,7 +24,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   gap: 8px;
-  font-family: "CozetteVector", "Phosphor";
+  font-family: "CozetteVector";
 }
 
 i {
@@ -75,59 +80,59 @@ i {
   image-rendering: pixelated;
 
   > .tl {
-    background: url("./images/top-left-corner.png");
+    background: url("./assets/images/top-left-corner.png");
     width: 8px;
     height: 8px;
   }
 
   > .tr {
-    background: url("./images/top-right-corner.png");
+    background: url("./assets/images/top-right-corner.png");
     width: 8px;
     height: 8px;
   }
 
   > .br {
-    background: url("./images/bottom-right-corner.png");
+    background: url("./assets/images/bottom-right-corner.png");
     width: 8px;
     height: 8px;
   }
 
   > .bl {
-    background: url("./images/bottom-left-corner.png");
+    background: url("./assets/images/bottom-left-corner.png");
     width: 8px;
     height: 8px;
   }
 
   > .t {
-    background: url("./images/top-border.png") repeat-x;
+    background: url("./assets/images/top-border.png") repeat-x;
   }
 
   > .b {
-    background: url("./images/bottom-border.png") repeat-x;
+    background: url("./assets/images/bottom-border.png") repeat-x;
   }
 
   > .l {
-    background: url("./images/left-border.png") repeat-y;
+    background: url("./assets/images/left-border.png") repeat-y;
   }
 
   > .r {
-    background: url("./images/right-border.png") repeat-y;
+    background: url("./assets/images/right-border.png") repeat-y;
   }
 
   .exit-button {
-    background: url("./images/exit-button.png");
+    background: url("./assets/images/exit-button.png");
     width: 16px;
     height: 16px;
   }
 
   .rectangular-thing {
-    background: url("./images/rectangle.png");
+    background: url("./assets/images/rectangle.png");
     width: 16px;
     height: 16px;
   }
 
   .minus-thing {
-    background: url("./images/minus.png");
+    background: url("./assets/images/minus.png");
     width: 16px;
     height: 16px;
   }
