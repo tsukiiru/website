@@ -20,7 +20,6 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  min-width: 100vh;
   flex-direction: column;
   overflow: hidden;
   gap: 8px;
@@ -46,11 +45,11 @@ i {
   align-items: end;
   flex-direction: row;
   justify-content: space-between;
+  width: 40em;
 
   > .navigate {
     display: flex;
     align-items: start;
-    padding-left: 16px;
     font-size: 16px;
     gap: 8px;
     color: var(--window-bg-color);
@@ -148,9 +147,14 @@ i {
     padding-top: 16px;
     overflow-y: scroll;
     scrollbar-width: none;
+    width: 40em;
+    max-width: 40em;
+    height: 20em;
+    max-height: 20em;
 
     > pre {
       font-size: 16px;
+
       color: var(--window-text-color);
       height: 100%;
       width: 100%;
@@ -199,6 +203,7 @@ i {
 
   > .title {
     background: var(--window-title-bg-color);
+    border-bottom: var(--window-text-color) 2px dashed;
     display: grid;
     grid-template-columns: 1fr 16px;
     grid-template-rows: 1fr;
@@ -222,6 +227,9 @@ i {
 }
 
 .status-cafe {
+  width: 300px;
+  max-height: 100px;
+
   > .content {
     background-color: var(--window-bg-color);
     padding-left: 6px;
@@ -283,10 +291,10 @@ i {
 .credit {
   text-align: right;
   color: var(--window-bg-color-alt);
-  padding-right: 12px;
   font-size: 15px;
   user-select: none;
   font-style: italic;
+  width: 40em;
 }
 
 .spinny {
