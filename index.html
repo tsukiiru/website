@@ -1,117 +1,167 @@
 <!doctype html>
 <!-- what are you doing in the source code? -->
 <html>
-  <head>
-    <title>hai!! ^~^</title>
-    <link href="./assets/images/favicon.ico" rel="icon" />
-    <link rel="stylesheet" href="beauty.css" />
-  </head>
-  <body>
-    <img src="./assets/images/clouds.jpg" class="wallpaper" />
+    <head>
+        <title>suki's little corner :3</title>
+        <link href="./assets/images/favicon.ico" rel="icon" />
+        <link rel="stylesheet" href="beauty.css" />
+    </head>
+    <body>
+        <img src="./assets/images/background/clouds.avif" class="wallpaper" />
 
-    <div class="spinny">
-      <a
-        class="content"
-        href="https://github.com/tsukiiru/website"
-        target="_blank"
-        >suki</a
-      >
-    </div>
-
-    <div class="p-top">
-      <div class="navigate">
-        >_
-        <a style="color: var(--window-text-color)">about me</a>
-        //
-        <a href="/friends.html">friends</a>
-        //
-        <a href="/links.html">links</a>
-        //
-      </div>
-
-      <div class="status-cafe" style="width: 300px; max-height: 100px">
-        <div class="tl"></div>
-        <div class="t"></div>
-        <div class="tr"></div>
-        <div class="l"></div>
-
-        <div class="title">
-          <a href="https://status.cafe" target="_blank">~/cache/status.cafe</a>
+        <div class="spinny">
+            <a
+                class="content"
+                href="https://github.com/tsukiiru/website"
+                target="_blank"
+                >suki</a
+            >
         </div>
 
-        <div class="r"></div>
-        <div class="l"></div>
-        <div class="content">
-          <span id="sc-info" class="info">...</span>
-          <p id="sc-content" class="full">loading...</p>
+        <div class="p-top">
+            <div class="navigate">
+                >_
+                <a style="color: var(--window-text-color)">about me</a>
+                //
+                <a href="/contacts.html">contacts</a>
+                //
+            </div>
 
-          <script>
-            fetch("https://status.cafe/users/tsukian/status.json")
-              .then((r) => r.json())
-              .then((r) => {
-                if (!r.content.length) {
-                  document.getElementById("sc-info").innerHTML =
-                    "nothing to see here";
-                  return;
-                }
-                document.getElementById("sc-info").innerHTML =
-                  "> tsukian " + r.face + " • " + r.timeAgo;
-                document.getElementById("sc-content").innerHTML = r.content;
-              });
-          </script>
+            <div class="status-cafe" style="width: 300px; max-height: 100px">
+                <div class="tl"></div>
+                <div class="t"></div>
+                <div class="tr"></div>
+                <div class="l"></div>
+
+                <div class="title">
+                    <a href="https://status.cafe" target="_blank"
+                        >~/cache/status.cafe</a
+                    >
+                </div>
+
+                <div class="r"></div>
+                <div class="l"></div>
+                <div class="content">
+                    <span id="sc-info" class="info">...</span>
+                    <p id="sc-content" class="full">loading...</p>
+
+                    <script>
+                        fetch("https://status.cafe/users/tsukian/status.json")
+                            .then((r) => r.json())
+                            .then((r) => {
+                                if (!r.content.length) {
+                                    document.getElementById(
+                                        "sc-info",
+                                    ).innerHTML = "nothing to see here";
+                                    return;
+                                }
+                                document.getElementById("sc-info").innerHTML =
+                                    "> tsukian " + r.face + " • " + r.timeAgo;
+                                document.getElementById(
+                                    "sc-content",
+                                ).innerHTML = r.content;
+                            });
+                    </script>
+                </div>
+                <div class="r"></div>
+                <div class="bl"></div>
+                <div class="b"></div>
+                <div class="br"></div>
+            </div>
         </div>
-        <div class="r"></div>
-        <div class="bl"></div>
-        <div class="b"></div>
-        <div class="br"></div>
-      </div>
-    </div>
-    <div class="window">
-      <div class="tl"></div>
-      <div class="t"></div>
-      <div class="tr"></div>
-      <div class="l"></div>
+        <div class="window">
+            <div class="tl"></div>
+            <div class="t"></div>
+            <div class="tr"></div>
+            <div class="l"></div>
 
-      <div class="title">
-        <span>~/files/about_me.txt</span>
-        <div class="exit-button"></div>
-      </div>
+            <div class="title">
+                <span>~/files/about_me.txt</span>
+                <div class="exit-button"></div>
+            </div>
 
-      <div class="r"></div>
-      <div class="l"></div>
-      <div class="content">
-        <pre>
-hello hi!! mah name's <b>tsuki</b> <i>(or also lunar 🌙)</i>
-> pronouns: any~! (im non-binary)
----
-> ❗ some notices when interacting ❗
- ⋆ i have mild autism and ADHD, mostly <em>misophonia</em>, <em>hyperacusis</em>, <em>sensory overload</em>, <em>vestibular sensitivity</em>
- ⋆ i tend to avoid discussions, especially really tense and serious ones, i cant handle pressure really well
- ⋆ i have high sensory processing sensitivity, so i cant control my emotions sometimes
- ⋆ i overthink and have trust issues <i>(also mild but noticeable)</i>
- ⋆ im weird. <i>lol</i>
- ⋆ i value presence, actual quality time over anything else
- ⋆ i can be quite clingy and needy towards people i like T.T
----
-> 🌟 what am i ?? 🌟
- ⋆ im a silly and quirky individual from the planet <em>Earth</em>, or more specifically from Vietnam 🇻🇳
- ⋆ you <i>mayyy</i> know me, or... actually you mostly may not 🫠, thats quite understandable bc im not really active online <i>(im really shy lol //)</i>
- ⋆ im currently a student and i have interests in computers, robots, etc. i also enjoy drawing, photography, writing <i>(i have my own journal!!)</i>, cooking, going outside (yes i <b>do</b> touch <a href="https://en.wikipedia.org/wiki/Grass"><em>grass</em></a>) 
- ⋆ i love my friends and family!!!! &lt;3
- ⋆ i mostly use vietnamese and english, im also learning korean
- ⋆ i like cute things :3
- ⋆ i love animals.. cats, dogs, foxes, bunnies, capybaras, whatever, i love all of them!!
- ⋆ i prefer listening over speaking, but if im in the mood, i can yap for hours nonstop T.T
----
-> fav artists: Good Kid, Alec Benjamin, Powfu, BoyWithUke :3
-i also watch movies & tv-series, ill post my watchlist online soon !!
-</pre>
-      </div>
-      <div class="r"></div>
-      <div class="bl"></div>
-      <div class="b"></div>
-      <div class="br"></div>
-    </div>
-    <div class="credit">© 2026 tsuki - MIT License</div>
-  </body>
+            <div class="r"></div>
+            <div class="l"></div>
+            <div class="content">
+                <p>hello hi!! mah name's <b>tsuki </b><i>(or also lunar 🌙)</i>
+> pronouns: any~! (im non-binary 🏳️‍🌈)
+---</p>
+                <h3>❗ some notices when interacting ❗</h3>
+                <ul>
+                    <li>
+                        i have mild autism and ADHD, mostly sound-related stuffs
+                    </li>
+                    <li>
+                        i tend to avoid discussions, especially really intense
+                        and serious ones, i cant handle pressure really well
+                    </li>
+                    <li>
+                        i have high sensory processing sensitivity, so i cant
+                        control my emotions sometimes
+                    </li>
+                    <li>
+                        i overthink and have trust issues
+                        <i>(also mild but noticeable)</i>
+                    </li>
+                    <li>im weird. <i>lol</i></li>
+                    <li>
+                        i value presence, actual quality time over anything else
+                    </li>
+                </ul>
+                <h3>🌟 what am i ?? 🌟</h3>
+                <ul>
+                    <li>
+                        im a silly an quirky creature from the planet
+                        <em>earth</em>, or more specifically from Vietnam 🇻🇳
+                    </li>
+                    <li>
+                        you <i>mayyy</i> know me, or... actually you mostly may
+                        not qwq, thats quite understandable honestly...
+                    </li>
+                    <li>
+                        i have bad listening skill cuz most of the time i text
+                        to people instead of talking to them, i know English,
+                        and a little bit of Korean
+                    </li>
+                    <li>i looove cute and cozy things :3</li>
+                    <li>i like animals, especially cats and dogs</li>
+                </ul>
+                <h3>🌈 what do i like? 🌈</h3>
+                <ul>
+                    <li>
+                        i listen to music (at least 2 hours a day :p), my fav
+                        artists are Good Kid, BoyWithUke and Powfu
+                    </li>
+                    <li>i read books and watch movies</li>
+                    <li>
+                        i also like photography, journaling, and touching grass
+                    </li>
+                    <li>
+                        spending time with my friends and family is also my
+                        priority
+                    </li>
+                    <li>
+                        also <em>you</em> cuz you visited my little corner, so
+                        thank you for that!! :3
+                    </li>
+                </ul>
+            </div>
+            <div class="r"></div>
+            <div class="bl"></div>
+            <div class="b"></div>
+            <div class="br"></div>
+        </div>
+
+        <div class="coolplaces">
+            <p>cool places</p>
+            <div>
+                <a href="https://sukiwa.vercel.app" target="_blank"><img src="assets/images/things/me.avif" title="wowie totally not my website" style="image-rendering: crisp-edges; image-rendering: pixelated;"/></a>
+                <iframe src="//incr.easrng.net/badge?key=tsuki" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" frameborder="0"></iframe>
+                <a href="https://soggy.cat" target="_blank"><img src="assets/images/things/soggy.avif" title="sopping wet cat" /></a>
+                <a href="https://ezgif.com" target="_blank"><img src="assets/images/things/ezgif.avif" /></a>
+                <img src="assets/images/things/arch.avif" title="i use arch btw :3" />
+                <a href="https://justuse.org" target="_blank"><img src="assets/images/things/justuse.avif" /></a>
+            </div>
+        </div>
+    </body>
 </html>
