@@ -3,6 +3,11 @@
     src: url(./assets/fonts/CozetteVector.ttf);
 }
 
+@font-face {
+    font-family: asciid;
+    src: url(./assets/fonts/asciid.ttf);
+}
+
 :root {
     --window-bg-color: #ffeecc;
     --window-bg-color-alt: #ffeeccaa;
