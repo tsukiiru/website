@@ -37,7 +37,7 @@ i {
     height: 100%;
     object-fit: cover;
     inset: 0;
-    filter: blur(5px);
+    filter: brightness(0.5)
 }
 
 .p-top {
@@ -342,8 +342,9 @@ i {
     }
 }
 
-.coolplaces {
+.webbadges {
     padding-top: 6px;
+    width: 80%;
 
     > p {
         width: 100%;
@@ -358,7 +359,6 @@ i {
         justify-content: center;
         align-items: center;
         gap: 2px;
-        max-width: 898px;
         flex-wrap: wrap;
 
         > * {
