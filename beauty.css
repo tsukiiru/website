@@ -50,7 +50,7 @@ i {
   align-items: end;
   flex-direction: row;
   justify-content: space-between;
-  width: 40rem;
+  width: 44rem;
 
   > .navigate {
     display: flex;
@@ -144,8 +144,8 @@ i {
 }
 
 .window {
-  max-width: 40rem;
-  width: 40rem;
+  max-width: 44rem;
+  width: 44rem;
 
   > .content {
     background-color: var(--window-bg-color);
@@ -154,8 +154,8 @@ i {
     padding-top: 16px;
     overflow-y: scroll;
     scrollbar-width: none;
-    width: 40rem;
-    max-width: 40rem;
+    width: 44rem;
+    max-width: 44rem;
     height: 20rem;
     max-height: 20rem;
     display: flex;
