@@ -1,164 +1,188 @@
 <!doctype html>
 <!-- what are you doing in the source code? -->
 <html>
-    <head>
-        <title>suki's little corner :3</title>
-        <link href="./assets/images/favicon.ico?v=2" rel="icon" />
-        <link rel="stylesheet" href="beauty.css" />
-    </head>
-    <body>
-        <img src="./assets/images/background/silly_cat.avif" class="wallpaper" />
+  <head>
+    <title>suki's little corner :3</title>
+    <link href="./assets/images/favicon.ico?v=2" rel="icon" />
+    <link rel="stylesheet" href="beauty.css" />
+  </head>
+  <body>
+    <img src="./assets/images/background/silly_cat.avif" class="wallpaper" />
 
-        <div class="spinny">
-            <a
-                class="content"
-                href="https://github.com/tsukiiru/website"
-                target="_blank"
-                >suki</a
-            >
+    <div class="spinny">
+      <a
+        class="content"
+        href="https://github.com/tsukiiru/website"
+        target="_blank"
+        >suki</a
+      >
+    </div>
+
+    <div class="p-top">
+      <div class="navigate">
+        >_
+        <a style="color: var(--window-text-color)">about me</a>
+        //
+        <a href="/contacts.html">contacts</a>
+        //
+      </div>
+
+      <div class="status-cafe">
+        <div class="tl"></div>
+        <div class="t"></div>
+        <div class="tr"></div>
+        <div class="l"></div>
+
+        <div class="title">
+          <a href="https://status.cafe" target="_blank">~/cache/status.cafe</a>
         </div>
 
-        <div class="p-top">
-            <div class="navigate">
-                >_
-                <a style="color: var(--window-text-color)">about me</a>
-                //
-                <a href="/contacts.html">contacts</a>
-                //
-            </div>
+        <div class="r"></div>
+        <div class="l"></div>
+        <div class="content">
+          <span id="sc-info" class="info">...</span>
+          <p id="sc-content" class="full">loading...</p>
 
-            <div class="status-cafe">
-                <div class="tl"></div>
-                <div class="t"></div>
-                <div class="tr"></div>
-                <div class="l"></div>
-
-                <div class="title">
-                    <a href="https://status.cafe" target="_blank"
-                        >~/cache/status.cafe</a
-                    >
-                </div>
-
-                <div class="r"></div>
-                <div class="l"></div>
-                <div class="content">
-                    <span id="sc-info" class="info">...</span>
-                    <p id="sc-content" class="full">loading...</p>
-
-                    <script>
-                        fetch("https://status.cafe/users/tsukian/status.json")
-                            .then((r) => r.json())
-                            .then((r) => {
-                                if (!r.content.length) {
-                                    document.getElementById(
-                                        "sc-info",
-                                    ).innerHTML = "nothing to see here";
-                                    return;
-                                }
-                                document.getElementById("sc-info").innerHTML =
-                                    "> tsukian " + r.face + " • " + r.timeAgo;
-                                document.getElementById(
-                                    "sc-content",
-                                ).innerHTML = r.content;
-                            });
-                    </script>
-                </div>
-                <div class="r"></div>
-                <div class="bl"></div>
-                <div class="b"></div>
-                <div class="br"></div>
-            </div>
+          <script>
+            fetch("https://status.cafe/users/tsukian/status.json")
+              .then((r) => r.json())
+              .then((r) => {
+                if (!r.content.length) {
+                  document.getElementById("sc-info").innerHTML =
+                    "nothing to see here";
+                  return;
+                }
+                document.getElementById("sc-info").innerHTML =
+                  "> tsukian " + r.face + " • " + r.timeAgo;
+                document.getElementById("sc-content").innerHTML = r.content;
+              });
+          </script>
         </div>
-        <div class="window">
-            <div class="tl"></div>
-            <div class="t"></div>
-            <div class="tr"></div>
-            <div class="l"></div>
+        <div class="r"></div>
+        <div class="bl"></div>
+        <div class="b"></div>
+        <div class="br"></div>
+      </div>
+    </div>
+    <div class="window">
+      <div class="tl"></div>
+      <div class="t"></div>
+      <div class="tr"></div>
+      <div class="l"></div>
 
-            <div class="title">
-                <span>~/files/about_me.txt</span>
-                <div class="exit-button"></div>
-            </div>
+      <div class="title">
+        <span>~/files/about_me.txt</span>
+        <div class="exit-button"></div>
+      </div>
 
-            <div class="r"></div>
-            <div class="l"></div>
-            <div class="content">
-                <p>hello hi!! mah name's <b>tsuki </b><i>(or also lunar 🌙)</i>
-> any (he/they preferred)
-> a LOT of nicknames</p>
-                <h3>❗ some notices when interacting ❗</h3>
-                <ul>
-                    <li>
-                        i have mild autism, mostly sound-related stuffs
-                    </li>
-                    <li>
-                        i tend to avoid discussions, especially really intense
-                        and serious ones, i cant handle pressure really well
-                    </li>
-                    <li>
-                        i have high sensory processing sensitivity, so i cant
-                        control my emotions sometimes
-                    </li>
-                    <li>im weird. <i>lol</i></li>
-                    <li>
-                        i value presence, actual quality time over anything else
-                    </li>
-                </ul>
-                <h3>🌟 what am i ?? 🌟</h3>
-                <ul>
-                    <li>
-                        im a silly an quirky creature from the planet <em>earth</em>, or more specifically from Vietnam 🇻🇳
-                    </li>
-                    <li>
-                        you <i>mayyy</i> know me, or... actually you mostly may not qwq, im not really active online
-                    </li>
-                    <li>
-                        i have bad listening skill cuz most of the time i text instead of talking, i know English, and a little bit of Korean, and of course Vietnamese!
-                    </li>
-                    <li>i looove cute and cozy things :3</li>
-                    <li>i like animals & nature, especially cats and dogs and thee emperor catepillar >:3</li>
-                </ul>
-                <h3>🌈 what do i like? 🌈</h3>
-                <ul>
-                    <li>
-                        i listen to music, my fav artists are Good Kid, BoyWithUke and Powfu, genres... idk? i can consume anything
-                    </li>
-                    <li>i read books and watch movies</li>
-                    <li>
-                        i also like photography, journaling, and touching grass
-                    </li>
-                    <li>
-                        spending time with my friends and family is also my priority
-                    </li>
-                    <li>
-                        also <em>you</em> cuz you visited my little corner, so thank you for that!! :3
-                    </li>
-                </ul>
-            </div>
-            <div class="r"></div>
-            <div class="bl"></div>
-            <div class="b"></div>
-            <div class="br"></div>
-        </div>
+      <div class="r"></div>
+      <div class="l"></div>
+      <div class="content">
+        <p>hello hi!! mah name's <b>tsuki </b><i>(or also lunar 🌙)</i></p>
+        <h3>❗ some notices when interacting ❗</h3>
+        <ul>
+          <li>i have mild autism, mostly sound-related stuffs</li>
+          <li>
+            i tend to avoid discussions, especially really intense and serious
+            ones, i cant handle pressure really well
+          </li>
+          <li>
+            i have high sensory processing sensitivity, so i cant control my
+            emotions sometimes
+          </li>
+          <li>im weird. <i>lol</i></li>
+          <li>i value presence, actual quality time over anything else</li>
+        </ul>
+        <h3>🌟 what am i ?? 🌟</h3>
+        <ul>
+          <li>
+            im a silly an quirky creature from the planet <em>earth</em>, or
+            more specifically from Vietnam 🇻🇳
+          </li>
+          <li>
+            you <i>mayyy</i> know me, or... actually you mostly may not qwq, im
+            not really active online
+          </li>
+          <li>
+            i have bad listening skill cuz most of the time i text instead of
+            talking, i know English, and a little bit of Korean, and of course
+            Vietnamese!
+          </li>
+          <li>i looove cute and cozy things :3</li>
+          <li>
+            i like animals & nature, especially cats and dogs and thee emperor
+            catepillar >:3
+          </li>
+        </ul>
+        <h3>🌈 what do i like? 🌈</h3>
+        <ul>
+          <li>
+            i listen to music, my fav artists are Good Kid, BoyWithUke and
+            Powfu, genres... idk? i can consume anything
+          </li>
+          <li>i read books and watch movies</li>
+          <li>i also like photography, journaling, and touching grass</li>
+          <li>spending time with my friends and family is also my priority</li>
+          <li>
+            also <em>you</em> cuz you visited my little corner, so thank you for
+            that!! :3
+          </li>
+        </ul>
+      </div>
+      <div class="r"></div>
+      <div class="bl"></div>
+      <div class="b"></div>
+      <div class="br"></div>
+    </div>
 
-        <div class="webbadges">
-            <p>things ヽ(・∀・)ﾉ</p>
-            <div>
-                <iframe src="//incr.easrng.net/badge?key=tsuki" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" frameborder="0"></iframe>
-                <a href="https://ezgif.com" target="_blank"><img src="assets/images/things/ezgif.avif" /></a>
-                <a href="https://archlinux.org" target="_blank"><img src="assets/images/things/arch.avif" title="i use arch btw :3" /></a>
-                <a href="https://justuse.org" target="_blank"><img src="assets/images/things/justuse.avif" /></a>
-                <a href="https://gutenberg.org" target="_blank"><img src="assets/images/things/gutenberg.avif" /></a>
-                <img src="assets/images/things/firefox.avif" />
-                <img src="assets/images/things/get_a_computer.avif" title="bad mobile support!!" />
-            </div>
-            <p>peeps („•ᴗ•„)</p>
-            <div>
-              <a href="https://sukiwa.vercel.app" target="_blank"><img src="assets/images/things/me.avif" title="wowie totally not my website" style="image-rendering: pixelated;"/></a>
-              <a href="https://coolsite.cv" target="_blank"><img src="assets/images/things/swatchlings.avif" title="cv cv" /></a>
-                <!-- cv told me hes gonna make an actual 88x31 for his website soon,,, idk when really lol-->
-              <a href="https://soggy.cat" target="_blank"><img src="assets/images/things/soggy.avif" title="sopping wet cat" /></a>
-            </div>
-        </div>
-    </body>
+    <div class="webbadges">
+      <p>things ヽ(・∀・)ﾉ</p>
+      <div>
+        <iframe
+          src="//incr.easrng.net/badge?key=tsuki"
+          style="background: url(//incr.easrng.net/bg.gif)"
+          title="increment badge"
+          frameborder="0"
+        ></iframe>
+        <a href="https://ezgif.com" target="_blank"
+          ><img src="assets/images/things/ezgif.avif"
+        /></a>
+        <a href="https://archlinux.org" target="_blank"
+          ><img src="assets/images/things/arch.avif" title="i use arch btw :3"
+        /></a>
+        <a href="https://justuse.org" target="_blank"
+          ><img src="assets/images/things/justuse.avif"
+        /></a>
+        <a href="https://gutenberg.org" target="_blank"
+          ><img src="assets/images/things/gutenberg.avif"
+        /></a>
+        <img src="assets/images/things/firefox.avif" />
+        <img
+          src="assets/images/things/get_a_computer.avif"
+          title="bad mobile support!!"
+        />
+        <a href="https://bongo.cat" target="_blank"
+          ><img
+            src="assets/images/things/bogo.avif"
+            title="aaaaa i love bongo cat!!! >w<"
+        /></a>
+      </div>
+      <p>peeps („•ᴗ•„)</p>
+      <div>
+        <a href="https://sukiwa.vercel.app" target="_blank"
+          ><img
+            src="assets/images/things/me.avif"
+            title="wowie totally not my website"
+            style="image-rendering: pixelated"
+        /></a>
+        <a href="https://coolsite.cv" target="_blank"
+          ><img src="assets/images/things/swatchlings.avif" title="cv cv"
+        /></a>
+        <!-- cv told me hes gonna make an actual 88x31 for his website soon,,, idk when really lol-->
+        <a href="https://soggy.cat" target="_blank"
+          ><img src="assets/images/things/soggy.avif" title="sopping wet cat"
+        /></a>
+      </div>
+    </div>
+  </body>
 </html>
