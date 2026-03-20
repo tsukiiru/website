@@ -154,8 +154,6 @@ i {
     padding-top: 16px;
     overflow-y: scroll;
     scrollbar-width: none;
-    width: 44rem;
-    max-width: 44rem;
     height: 20rem;
     max-height: 20rem;
     display: flex;
