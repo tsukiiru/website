@@ -26,6 +26,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   flex-direction: column;
+  margin: 0;
   overflow: hidden;
   gap: 8px;
   font-family: "CozetteVector";
@@ -143,68 +144,82 @@ i {
   /* yeah,, i dont know what those things are called */
 }
 
+#home {
+  display: flex;
+}
+
+#contacts:target {
+  display: flex;
+
+  ~ #home {
+    display: none;
+  }
+}
+
 .window {
   max-width: 44rem;
   width: 44rem;
 
   > .content {
-    background-color: var(--window-bg-color);
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-top: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
     overflow-y: scroll;
     scrollbar-width: none;
-    height: 20rem;
-    max-height: 20rem;
-    display: flex;
-    flex-direction: column;
+    background-color: var(--window-bg-color);
     line-height: 1.6rem;
     font-size: 15px;
     color: var(--window-text-color);
     font-weight: 600;
     text-wrap-mode: wrap;
     text-align: left;
+    height: 20rem;
 
-    ul {
-      list-style-type: "⋆ ";
-      margin: 0;
-      padding-left: 1rem;
-      font-size: inherit;
-    }
+    > div {
+      display: none;
+      flex-direction: column;
 
-    h3 {
-      font-size: 18px;
-      margin: 0;
-      text-align: center;
-    }
+      ul {
+        list-style-type: "⋆ ";
+        margin: 0;
+        padding-left: 1rem;
+        font-size: inherit;
+      }
 
-    i {
-      color: var(--window-text-color-alt);
-    }
+      h3 {
+        font-size: 18px;
+        margin: 0;
+        text-align: center;
+      }
 
-    b {
-      color: var(--blush);
-    }
+      i {
+        color: var(--window-text-color-alt);
+      }
 
-    em {
-      color: var(--earthling);
-    }
+      b {
+        color: var(--blush);
+      }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-      text-decoration-skip-ink: none;
-      /*
+      em {
+        color: var(--earthling);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        text-decoration-skip-ink: none;
+        /*
         &:has(i[class^="ph"]) {
           display: inline-flex;
           align-items: center;
           height: fit-content;
         }
 */
-      &:hover {
-        text-decoration: underline;
-        text-decoration-style: wavy;
-        text-decoration-color: var(--window-text-color-alt);
+        &:hover {
+          text-decoration: underline;
+          text-decoration-style: wavy;
+          text-decoration-color: var(--window-text-color-alt);
+        }
       }
     }
 
@@ -212,7 +227,7 @@ i {
       color: inherit;
     }
 
-    > p {
+    p {
       width: 100%;
       margin: 0;
       white-space: pre-wrap;
