@@ -1,11 +1,11 @@
 @font-face {
   font-family: CozetteVector;
-  src: url(./assets/fonts/CozetteVector.ttf);
+  src: url(/assets/fonts/CozetteVector.ttf);
 }
 
 @font-face {
   font-family: asciid;
-  src: url(./assets/fonts/asciid.ttf);
+  src: url(/assets/fonts/asciid.ttf);
 }
 
 :root {
@@ -15,7 +15,6 @@
   --window-text-color: #46425e;
   --window-text-color-alt: #46425eaa;
   --blush: #ff6973;
-  /* really? yes :3 */
   --earthling: #00b9be;
 }
 
@@ -84,59 +83,59 @@ i {
   image-rendering: pixelated;
 
   > .tl {
-    background: url("./assets/images/components/top-left-corner.avif");
+    background: url("/assets/images/components/top-left-corner.avif");
     width: 8px;
     height: 8px;
   }
 
   > .tr {
-    background: url("./assets/images/components/top-right-corner.avif");
+    background: url("/assets/images/components/top-right-corner.avif");
     width: 8px;
     height: 8px;
   }
 
   > .br {
-    background: url("./assets/images/components/bottom-right-corner.avif");
+    background: url("/assets/images/components/bottom-right-corner.avif");
     width: 8px;
     height: 8px;
   }
 
   > .bl {
-    background: url("./assets/images/components/bottom-left-corner.avif");
+    background: url("/assets/images/components/bottom-left-corner.avif");
     width: 8px;
     height: 8px;
   }
 
   > .t {
-    background: url("./assets/images/components/top-border.avif") repeat-x;
+    background: url("/assets/images/components/top-border.avif") repeat-x;
   }
 
   > .b {
-    background: url("./assets/images/components/bottom-border.avif") repeat-x;
+    background: url("/assets/images/components/bottom-border.avif") repeat-x;
   }
 
   > .l {
-    background: url("./assets/images/components/left-border.avif") repeat-y;
+    background: url("/assets/images/components/left-border.avif") repeat-y;
   }
 
   > .r {
-    background: url("./assets/images/components/right-border.avif") repeat-y;
+    background: url("/assets/images/components/right-border.avif") repeat-y;
   }
 
   .exit-button {
-    background: url("./assets/images/components/exit-button.avif");
+    background: url("/assets/images/components/exit-button.avif");
     width: 16px;
     height: 16px;
   }
 
   .rectangular-thing {
-    background: url("./assets/images/components/rectangle.avif");
+    background: url("/assets/images/components/rectangle.avif");
     width: 16px;
     height: 16px;
   }
 
   .minus-thing {
-    background: url("./assets/images/components/minus.avif");
+    background: url("/assets/images/components/minus.avif");
     width: 16px;
     height: 16px;
   }
