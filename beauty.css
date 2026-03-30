@@ -331,6 +331,7 @@ i {
   font-family: asciid;
   user-select: none;
   will-change: contents;
+  animation: spinny 3.5s linear infinite;
 
   > .content {
     display: inline-block;
