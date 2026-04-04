@@ -34,6 +34,25 @@
         //
         <a href="#contacts">contacts</a>
         //
+
+        <script>
+          document.querySelectorAll(".navigate>a").forEach((link) => {
+            link.addEventListener("click", (e) => {
+              e.preventDefault();
+              document.querySelector(".active")?.classList.remove("active");
+
+              const id = link.getAttribute("href").slice(1);
+
+              history.pushState(null, "", link.getAttribute("href"));
+
+              if (!id) {
+                document.getElementById("home").classList.add("active");
+              } else {
+                document.getElementById(id)?.classList.add("active");
+              }
+            });
+          });
+        </script>
       </div>
 
       <!-- okay,, now that you are here, you'll have to endure the horrible code by a high school student -->
@@ -107,6 +126,7 @@
               <a href="https://x.com/tsukiiru" target="_blank"
                 >twitter <span class="ph-bold ph-twitter-logo"></span
               ></a>
+              <i>(who even calls it "X" anyway ┐(￣ヘ￣)┌)</i>
             </li>
             <li>
               <a href="mailto:parsley.dew@proton.me" target="_blank"
@@ -142,7 +162,7 @@
             </li>
           </ul>
         </div>
-        <div id="home">
+        <div id="home" class="active">
           <p>hello hi!! mah name's <b>tsuki </b><i>(or also lunar 🌙)</i></p>
           <h3>❗ some notices when interacting ❗</h3>
           <ul>

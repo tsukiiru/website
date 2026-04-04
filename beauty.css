@@ -151,16 +151,13 @@ i {
   /* yeah,, i dont know what those things are called */
 }
 
-#home {
-  display: flex;
+#home,
+#contacts {
+  display: none;
 }
 
-#contacts:target {
-  display: flex;
-
-  ~ #home {
-    display: none;
-  }
+.active {
+  display: flex !important;
 }
 
 .window {
@@ -393,5 +390,30 @@ i {
         transform: scale(1.04) translateY(-3px);
       }
     }
+  }
+}
+
+@media (max-width: 730px) {
+  body {
+    overflow: unset;
+  }
+
+  .window {
+    width: 95%;
+  }
+
+  .p-top {
+    width: 100%;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .spinny {
+    display: none;
+  }
+
+  .webbadges {
+    padding-top: 0;
   }
 }
