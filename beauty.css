@@ -225,7 +225,24 @@ i {
     p {
       width: 100%;
       margin: 0;
-      white-space: pre-wrap;
+      /*     white-space: pre-wrap; */
+    }
+
+    .entry {
+      display: flex;
+      padding-top: 10px;
+      width: 100%;
+      flex-direction: column;
+      gap: 4px;
+
+      > img {
+        border-radius: 7px;
+      }
+
+      > h1 {
+        font-size: 18px;
+        margin: 0;
+      }
     }
   }
 
