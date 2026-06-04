@@ -8,6 +8,11 @@
   src: url(/assets/fonts/LowresPixel.otf);
 }
 
+@font-face {
+  font-family: m5x7;
+  src: url(/assets/fonts/m5x7.ttf);
+}
+
 :root {
   --window-bg-color: #ffeecc;
   --window-bg-color-alt: #ffeeccaa;
@@ -20,15 +25,11 @@
 
 body {
   background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
-  flex-direction: column;
   margin: 0;
   overflow: hidden;
   gap: 8px;
-  font-family: "LowresPixel";
+  font-family: "m5x7";
 }
 
 i {
@@ -45,20 +46,23 @@ i {
   filter: brightness(0.5);
 }
 
-.p-top {
+.stack {
   display: flex;
-  align-items: end;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 44rem;
+  align-items: start;
+  flex-direction: column;
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 4;
 
   > .navigate {
     display: flex;
     align-items: start;
-    font-size: 15px;
+    font-size: 24px;
     gap: 8px;
     color: var(--window-bg-color);
     user-select: none;
+    padding-left: 8px;
 
     > a {
       color: inherit;
@@ -141,17 +145,27 @@ i {
   /* yeah,, i dont know what those things are called */
 }
 
-#home,
 #contacts {
-  display: none;
+  width: 25rem;
+  height: 22rem;
+  left: 300px;
+  top: 300px;
+}
+
+#home {
+  width: 30rem;
+  height: 25rem;
+  left: 200px;
+  top: 200px;
 }
 
 .active {
-  display: flex !important;
+  display: grid !important;
 }
 
 .window {
-  width: 44rem;
+  display: none;
+  position: absolute;
 
   > .content {
     padding-left: 8px;
@@ -161,105 +175,89 @@ i {
     scrollbar-width: none;
     background-color: var(--window-bg-color);
     line-height: 1.6rem;
-    font-size: 15px;
+    font-size: 24px;
     color: var(--window-text-color);
     text-align: left;
-    height: 20rem;
 
-    > div {
-      display: none;
-      flex-direction: column;
+    user-select: none;
+    ul {
+      list-style-type: "> ";
+      margin: 0;
+      padding-left: 1rem;
 
-      ul {
-        list-style-type: "⋆ ";
-        margin: 0;
-        padding-left: 1rem;
-        font-size: inherit;
-
-        li {
-          margin: 2pt 0;
-        }
+      li {
+        margin: 2pt 0;
+        user-select: none;
       }
+    }
 
-      h3 {
-        font-size: 18px;
-        margin: 5pt 0;
-        text-align: center;
-      }
+    h3 {
+      margin: 20px 0 0 0;
+      font-size: 24px;
+      color: var(--window-text-color-alt);
+      user-select: none;
+    }
 
-      i {
-        color: var(--window-text-color-alt);
-      }
+    i {
+      color: var(--window-text-color-alt);
+      user-select: none;
+    }
 
-      b {
-        color: var(--blush);
-      }
+    b {
+      color: var(--blush);
+      user-select: none;
+    }
 
-      em {
-        color: var(--earthling);
-      }
+    em {
+      color: var(--earthling);
+      user-select: none;
+    }
 
-      a {
-        text-decoration: none;
-        color: inherit;
-        text-decoration-skip-ink: none;
-        /*
+    a {
+      text-decoration: none;
+      color: inherit;
+      text-decoration-skip-ink: none;
+      user-select: none;
+      /*
         &:has(i[class^="ph"]) {
           display: inline-flex;
           align-items: center;
           height: fit-content;
         }
 */
-        &:hover {
-          text-decoration: underline;
-          text-decoration-style: wavy;
-          text-decoration-color: var(--window-text-color-alt);
-        }
+      &:hover {
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: var(--window-text-color-alt);
       }
     }
 
     span {
       color: inherit;
+      user-select: none;
     }
 
     p {
       width: 100%;
       margin: 0;
+      user-select: none;
       /*     white-space: pre-wrap; */
-    }
-
-    .entry {
-      display: flex;
-      padding-top: 10px;
-      width: 100%;
-      flex-direction: column;
-      gap: 4px;
-
-      > img {
-        border-radius: 7px;
-      }
-
-      > h1 {
-        font-size: 18px;
-        margin: 0;
-      }
     }
   }
 
   > .title {
     background: var(--window-title-bg-color);
-    border-bottom: var(--window-text-color) 2px dashed;
     display: grid;
     grid-template-columns: 1fr 16px;
     grid-template-rows: 1fr;
     padding-left: 4px;
     padding-right: 4px;
     user-select: none;
+    font-size: 24px;
 
     > span {
-      font-size: 18px;
       color: var(--window-text-color);
-      text-align: center;
+      text-align: left;
       vertical-align: middle;
       margin: 0;
       letter-spacing: 2pt;
@@ -269,27 +267,27 @@ i {
 }
 
 .status-cafe {
-  width: 350px;
-  max-height: 100px;
+  width: 352px;
+  max-height: 96px;
 
   > .content {
     background-color: var(--window-bg-color);
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-top: 2px;
+    padding-left: 8px;
+    padding-top: 8px;
     display: grid;
-    grid-template-rows: 12px 1fr;
+    grid-template-rows: 16px 1fr;
     grid-template-columns: 1fr;
     gap: 8px;
 
     > .info {
-      font-size: 12px;
+      font-size: 24px;
       color: var(--blush);
       user-select: none;
+      margin: 0;
     }
 
     > .full {
-      font-size: 14px;
+      font-size: 24px;
       color: var(--window-text-color);
       margin: 0;
       overflow: hidden;
@@ -304,19 +302,19 @@ i {
     grid-template-rows: 1fr;
     align-content: center;
     align-items: center;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
 
     > a {
-      font-size: 14px;
+      font-size: 24px;
       color: var(--window-text-color);
       text-align: center;
       vertical-align: middle;
       margin: 0;
-      letter-spacing: 2pt;
       text-transform: uppercase;
       text-decoration: none;
       text-decoration-skip-ink: none;
+      letter-spacing: 2pt;
 
       &:hover {
         text-decoration: underline;
@@ -329,8 +327,8 @@ i {
 
 .spinny {
   position: fixed;
-  bottom: 12px;
-  right: 12px;
+  bottom: 16px;
+  right: 16px;
   color: var(--window-bg-color);
   font-family: asciid;
   user-select: none;
@@ -347,7 +345,7 @@ i {
   transition: transform ease-in-out 0.4s;
 
   &:hover {
-    transform: translateY(-3px) scale(1.1);
+    transform: translateY(-4px) scale(1.1);
     color: var(--earthling);
     cursor: pointer;
     text-shadow: 2px 2px 4px var(--earthling);
@@ -367,23 +365,25 @@ i {
 }
 
 .webbadges {
-  padding-top: 6px;
-  width: 80%;
+  width: 100%;
+  position: absolute;
+  top: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
 
   > p {
     width: 100%;
     text-align: center;
     margin: 0;
-    font-size: 12px;
+    font-size: 16px;
     color: var(--window-bg-color-alt);
-    padding-top: 5px;
   }
 
   > div {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3px;
+    gap: 4px;
     flex-wrap: wrap;
     padding-top: 4px;
 
@@ -397,30 +397,5 @@ i {
         transform: scale(1.04) translateY(-3px);
       }
     }
-  }
-}
-
-@media (max-width: 730px) {
-  body {
-    overflow: unset;
-  }
-
-  .window {
-    width: 95%;
-  }
-
-  .p-top {
-    width: 100%;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .spinny {
-    display: none;
-  }
-
-  .webbadges {
-    padding-top: 0;
   }
 }

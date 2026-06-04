@@ -13,45 +13,58 @@
 
     <link href="/assets/images/favicon.ico?v=2" rel="icon" />
     <link rel="stylesheet" href="beauty.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"
-    />
+    <script src="/assets/interact.min.js"></script>
+    <script>
+      interact(".draggable").draggable({
+        intertia: true,
+        modifiers: [
+          interact.modifiers.restrictRect({
+            restriction: "parent",
+            endOnly: true,
+          }),
+        ],
+        listeners: {
+          move(event) {
+            const target = event.target;
+            const x = parseFloat(target.getAttribute("data-x") || 0) + event.dx;
+            const y = parseFloat(target.getAttribute("data-y") || 0) + event.dy;
+
+            target.style.transform = `translate(${x}px, ${y}px)`;
+            target.setAttribute("data-x", x);
+            target.setAttribute("data-y", y);
+          },
+        },
+      });
+    </script>
   </head>
   <body>
     <img src="/assets/images/background/silly_cat.avif" class="wallpaper" />
 
     <div class="spinny">
-      <a class="content" href="//github.com/tsukiiru/website" target="_blank"
-        >tsuki</a
-      >
+      <a class="content" href="//github.com/tsukiiru/website">tsuki</a>
     </div>
 
-    <div class="p-top">
+    <div class="stack">
       <div class="navigate">
         >_
         <a href="#">info</a>
         //
         <a href="#contacts">contacts</a>
         //
-        <a href="#random">random</a>
-        //
 
         <script>
           document.querySelectorAll(".navigate>a").forEach((link) => {
             link.addEventListener("click", (e) => {
               e.preventDefault();
-              document.querySelector(".active")?.classList.remove("active");
 
               const id = link.getAttribute("href").slice(1);
 
               history.pushState(null, "", link.getAttribute("href"));
 
               if (!id) {
-                document.getElementById("home").classList.add("active");
+                document.getElementById("home").classList.toggle("active");
               } else {
-                document.getElementById(id)?.classList.add("active");
+                document.getElementById(id)?.classList.toggle("active");
               }
             });
           });
@@ -66,7 +79,7 @@
         <div class="l"></div>
 
         <div class="title">
-          <a href="https://status.cafe" target="_blank">~/.cache/status.cafe</a>
+          <a href="https://status.cafe">~/.cache/status.cafe</a>
         </div>
 
         <div class="r"></div>
@@ -85,7 +98,7 @@
                   return;
                 }
                 document.getElementById("sc-info").innerHTML =
-                  "> tsukian " + r.face + " • " + r.timeAgo;
+                  "> tsuki - " + r.timeAgo;
                 document.getElementById("sc-content").innerHTML = r.content;
               });
           </script>
@@ -96,164 +109,127 @@
         <div class="br"></div>
       </div>
     </div>
-    <div class="window">
+
+    <div class="draggable window" id="contacts" data-x="0" data-y="0">
       <div class="tl"></div>
       <div class="t"></div>
       <div class="tr"></div>
       <div class="l"></div>
 
       <div class="title">
-        <span>~/files/about_me.txt</span>
+        <span>~/files/beds.txt</span>
         <div class="exit-button"></div>
       </div>
 
       <div class="r"></div>
       <div class="l"></div>
       <div class="content">
-        <div id="contacts">
-          <h3>here are some places that you can find me !!</h3>
-          <ul>
-            <li>
-              <a
-                href="https://discord.com/users/451335202342436866"
-                target="_blank"
-                >discord <span class="ph-bold ph-discord-logo"></span
-              ></a>
-              <i
-                >(i dont accept random friend reqs, so join
-                <a target="_blank" href="/waitroom"><em>this</em></a>
-                if you need to message me)</i
-              >
-            </li>
-            <li>
-              <a href="https://x.com/tsukiiru" target="_blank"
-                >twitter <span class="ph-bold ph-twitter-logo"></span
-              ></a>
-              <i
-                >(who even calls it "X" anyway
-                <span>┐(￣ヘ￣)┌</span>
-                )</i
-              >
-            </li>
-            <li>
-              <a href="mailto:parsley.dew@proton.me" target="_blank"
-                >email <span class="ph-bold ph-mailbox"></span
-              ></a>
-            </li>
-            <li>
-              <a href="https://github.com/tsukiiru" target="_blank"
-                >github <span class="ph-bold ph-github-logo"></span
-              ></a>
-            </li>
-            <li>
-              <a href="https://matrix.to/#/@tsukiiru:matrix.org" target="_blank"
-                >matrix <span class="ph-bold ph-matrix-logo"></span
-              ></a>
-            </li>
-            <li>
-              <a href="https://www.last.fm/user/lunar1um" target="_blank"
-                >last.fm <span class="ph-bold ph-lastfm-logo"></span
-              ></a>
-            </li>
-            <li>
-              <a href="/form" target="_blank"
-                >form <span class="ph-bold ph-notepad"></span
-              ></a>
-              <i>(featured 🌟)</i>
-            </li>
-            <li>
-              <a href="https://ko-fi.com/tsukiiru" target="_blank"
-                >ko-fi <span class="ph-bold ph-coffee"></span
-              ></a>
-              <b>❗still working in progress❗</b>
-            </li>
-          </ul>
-        </div>
-        <div id="random">
-          <p>
-            <i>
-              here are some random funny stuffs that i dont know where to throw,
-              you can treat this as a hall of shame or fame or some sort,
-              updated quite frequently btw</i
+        <p>some places you can find me i think</p>
+        <h3>#spawnpoints</h3>
+        <ul>
+          <li>
+            <a href="https://discord.com/users/451335202342436866">discord</a>
+            <i
+              >(in case you cant message me, join
+              <a href="/waitroom"><em>this</em></a
+              >)</i
             >
-          </p>
-          <div class="entry">
-            <img
-              src="/assets/images/pic/random ass dude that just randomly found my profile.avif"
-            />
-            <h1>someone (May 23rd)</h1>
-            <p>
-              i have this really cool-looking form
-              <i>(that you should definitely do if you havent)</i>, and this guy
-              found it. whats so funny about it is the fact that we have never
-              even interacted once before and he (assuming) could still find my
-              profile and completed the form? 😭😭
-              <i
-                >(from the image, the only two messages this guy have "sent"
-                were joining ones)</i
-              >
-            </p>
-          </div>
-        </div>
-        <div id="home" class="active">
-          <p>hello hi!! mah name's <b>tsuki </b><i>(or also lunar 🌙)</i></p>
-          <h3>❗ some notices when interacting ❗</h3>
-          <ul>
-            <li>
-              im sensitive to sounds, cant really read social cues (autism)
-            </li>
-            <li>
-              i tend to avoid discussions, specifically really intense and
-              serious ones, i cant handle pressure really well ;-;
-            </li>
-            <li>
-              i have high sensory processing sensitivity, apologies if i get
-              emotional sometimes
-            </li>
-            <li>
-              im weird. <i>lol, not that* weird but yeah, you get the point</i>
-            </li>
-          </ul>
-          <h3>🌟 what am i ?? 🌟</h3>
-          <ul>
-            <li>
-              im a silly and quirky creature from the planet <em>earth</em> 🌏,
-              or more specifically from Vietnam!!1 🇻🇳
-            </li>
-            <li>
-              im not really active online, ill try to reply asap if you need me
-              though!!
-            </li>
-            <li>i absolutely looove cute and cozy things :3</li>
-            <li>
-              im fond of nature and animals, especially cats, dogs, and foxes
-            </li>
-          </ul>
-          <h3>🌈 what do i like? 🌈</h3>
-          <ul>
-            <li>
-              i listen to music, my fav artists are Good Kid, The Vanished
-              People, BoyWithUke, and Radiohead, genres... idk? i can consume
-              <i>pretty much</i>
-              <a target="_blank" href="/assets/images/pic/real.avif"
-                >anything</a
-              >
-              ╮(. ❛ ᴗ ❛.)╭
-            </li>
-            <li>reading books and watching movies is my cup of tea~ ☕</li>
-            <li>
-              im interested in photography, journaling, drawing, and playing
-              (and listening to) music!
-            </li>
-            <li>
-              about games... hmm,,,, id say i enjoy adventure games, a bit more
-              towards resources management type of game, you know. i especially
-              love games that put effort into their graphics, but not realistic
-              ones.
-            </li>
-            <li>currently playing: adofai, terraria</li>
-          </ul>
-        </div>
+          </li>
+          <li>
+            <a href="https://x.com/tsukiiru">twitter</a>
+            <i>(who even calls it "X" anyway)</i>
+          </li>
+          <li>
+            <a href="mailto:parsley.dew@proton.me">email </a>
+          </li>
+          <li>
+            <a href="https://github.com/tsukiiru">github</a>
+          </li>
+          <li>
+            <a href="https://matrix.to/#/@tsukiiru:matrix.org">matrix</a>
+          </li>
+          <li>
+            <a href="https://www.last.fm/user/lunar1um">last.fm</a>
+          </li>
+          <li>
+            <a href="/form">form</a>
+            <i>(featured!!)</i>
+          </li>
+        </ul>
+      </div>
+      <div class="r"></div>
+      <div class="bl"></div>
+      <div class="b"></div>
+      <div class="br"></div>
+    </div>
+
+    <div class="draggable window" id="home" data-x="0" data-y="0">
+      <div class="tl"></div>
+      <div class="t"></div>
+      <div class="tr"></div>
+      <div class="l"></div>
+
+      <div class="title">
+        <span>~/files/weeee.txt</span>
+        <div class="exit-button"></div>
+      </div>
+
+      <div class="r"></div>
+      <div class="l"></div>
+      <div class="content">
+        <p>hello hi!! its me, <b>tsuki</b>!</p>
+        <h3>#warning...</h3>
+        <ul>
+          <li>im sensitive to sounds, cant really read social cues (autism)</li>
+          <li>
+            i tend to avoid discussions, specifically really intense and serious
+            ones, i cant handle pressure really well ;-;
+          </li>
+          <li>
+            i have high sensory processing sensitivity, apologies if i get
+            emotional sometimes
+          </li>
+          <li>
+            im weird. <i>lol, not that* weird but yeah, you get the point</i>
+          </li>
+        </ul>
+        <h3>#whoami</h3>
+        <ul>
+          <li>
+            im a silly and quirky creature from the planet
+            <em><a href="https://radio.garden">earth</a></em
+            >, or more specifically from Vietnam!!1
+          </li>
+          <li>
+            im not really active online, ill try to reply asap if you need me
+            though!!
+          </li>
+          <li>i absolutely looove cute and cozy things :3</li>
+          <li>
+            im fond of nature and animals, especially cats, dogs, and foxes!
+          </li>
+        </ul>
+        <h3>#interests</h3>
+        <ul>
+          <li>
+            i listen to music, my fav artists are Good Kid, The Vanished People,
+            BoyWithUke, and Radiohead, genres... idk? i can consume
+            <i>pretty much</i>
+            <a href="/assets/images/pic/real.avif">anything</a>
+          </li>
+          <li>reading books and watching movies is my cup of tea~</li>
+          <li>
+            im interested in photography, journaling, drawing, and playing (and
+            listening to) music!
+          </li>
+          <li>
+            about games... hmm,,,, id say i enjoy adventure games, a bit more
+            towards resources management type of game, you know. i especially
+            love games that put effort into their graphics, but not realistic
+            ones.
+          </li>
+          <li>currently playing: adofai, terraria</li>
+        </ul>
       </div>
       <div class="r"></div>
       <div class="bl"></div>
@@ -262,8 +238,7 @@
     </div>
 
     <div class="webbadges">
-      <p>things ヽ(・∀・)ﾉ</p>
-      <!--cool things, yeah-->
+      <p>+things</p>
       <div>
         <iframe
           src="//incr.easrng.net/badge?key=tsuki"
@@ -271,48 +246,38 @@
           title="increment badge"
           frameborder="0"
         ></iframe>
-        <a href="https://ezgif.com" target="_blank"
+        <a href="https://ezgif.com"
           ><img src="assets/images/things/ezgif.avif"
         /></a>
-        <a href="https://archlinux.org" target="_blank"
+        <a href="https://archlinux.org"
           ><img src="assets/images/things/arch.avif" title="i use arch btw :3"
         /></a>
-        <a href="https://justuse.org" target="_blank"
+        <a href="https://justuse.org"
           ><img src="assets/images/things/justuse.avif"
         /></a>
-        <a href="https://gutenberg.org" target="_blank"
+        <a href="https://gutenberg.org"
           ><img src="assets/images/things/gutenberg.avif"
         /></a>
         <img src="assets/images/things/firefox.avif" />
         <img src="assets/images/things/get_a_computer.avif" />
-      </div>
-
-      <p>other stuffs? ⸜( ˙˘˙)⸝</p>
-      <!-- more stuffs that feel different from others,,, -->
-      <div>
-        <a href="https://bongo.cat" target="_blank"
+        <a href="https://bongo.cat"
           ><img src="assets/images/things/bogo.avif"
         /></a>
-        <a href="https://soggy.cat" target="_blank"
+        <a href="https://soggy.cat"
           ><img src="assets/images/things/soggy.avif" title="sopping wet cat"
         /></a>
       </div>
 
-      <p>peeps („•ᴗ•„)</p>
+      <p>+peeps</p>
       <div>
-        <a href="https://orwo.vercel.app" target="_blank"
-          ><img
-            src="assets/images/things/me.avif"
-            style="image-rendering: pixelated"
-        /></a>
         <img
           src="assets/images/things/88x31.avif"
           style="image-rendering: pixelated"
         />
-        <a href="https://coolsite.cv" target="_blank"
+        <a href="https://coolsite.cv"
           ><img src="assets/images/things/cv.avif"
         /></a>
-        <a href="https://levi.nekoweb.org/" target="_blank"
+        <a href="https://levi.nekoweb.org/"
           ><img src="assets/images/things/levibtn1.avif"
         /></a>
       </div>

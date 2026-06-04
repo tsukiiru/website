@@ -3,3 +3,6 @@ every assets are drawn by me
 background by @basilleaf (twitter)
 
 pls only use my 88x31 for linking my page, thanks! :3  
+
+fonts: [m5x7](https://managore.itch.io/m5x7) by Daniel Linssen   
+no idea where asciid come from, sorry  
