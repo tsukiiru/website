@@ -16,6 +16,7 @@
   --window-text-color-alt: #46425eaa;
   --blush: #ff6973;
   --earthling: #00b9be;
+  --foam: #56949f;
 }
 
 body {
@@ -144,24 +145,24 @@ i {
 }
 
 #contacts {
-  width: 25rem;
+  width: 400px;
+  height: 350px;
   left: 250px;
   top: 250px;
-  height: 25rem;
 }
 
 #home {
-  width: 30rem;
-  height: 25rem;
-  left: 150px;
+  width: 450px;
+  height: 400px;
+  left: 50px;
   top: 150px;
 }
 
 .subwindow {
-  width: 30rem;
-  height: 25rem;
-  left: 350px;
-  top: 350px;
+  width: 450px;
+  height: 400px;
+  right: 50px;
+  top: 300px;
 }
 
 .hidden {
@@ -172,7 +173,6 @@ i {
   display: grid;
   position: absolute;
   opacity: 0;
-  z-index: 5;
 
   > .content {
     padding-left: 8px;
@@ -228,7 +228,7 @@ i {
 
     a {
       text-decoration: none;
-      color: inherit;
+      color: var(--foam);
       text-decoration-skip-ink: none;
       user-select: none;
       /*

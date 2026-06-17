@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="beauty.css" />
     <script src="/assets/interact.min.js"></script>
     <script>
+      let i = 5;
+
       interact(".window").draggable({
         allowFrom: ".title>span",
         modifiers: [
@@ -24,6 +26,13 @@
           }),
         ],
         listeners: {
+          start(event) {
+            const target = event.target;
+
+            i += 1;
+            target.style.zIndex = i;
+          },
+
           move(event) {
             const target = event.target;
             const x = parseFloat(target.getAttribute("data-x") || 0) + event.dx;
@@ -160,6 +169,7 @@
       <div class="l"></div>
       <div class="content">
         <p>hello hi!! its me, <b>tsuki</b>!</p>
+        <p>along with trillions upon billions of other nicknames</p>
         <h3>#notice!</h3>
         <ul>
           <li>im sensitive to sounds, cant really read social cues (autism)</li>
@@ -182,6 +192,20 @@
             tell me, thats still better than leaving me hanging ;-;
           </li>
         </ul>
+        <h3>#whattheheck?</h3>
+        <p>
+          <b>tsuki つき /tsɯki/ - moon</b> is a little name i pick for myself
+          online, i really like the feeling it offers, i like the moon (i also
+          took some inspo from my previous nickname, lunar)
+        </p>
+        <p>
+          as i mentioned above, you can call me literally anything, as long as
+          its not an insult or something with a <i>really really</i> bad purpose
+        </p>
+        <p>
+          i mean, just by removing "ki", you get tsu, which fits in a LOT of
+          words
+        </p>
         <h3>#whoami</h3>
         <ul>
           <li>
@@ -234,7 +258,40 @@
         <p>i dont read mangas or watch animes often,,,</p>
         <ul>
           <li>my favourite anime oat, <a href="#glt">Girls' Last Tour</a>!!</li>
+          <li>next gotta be Nichijou</li>
         </ul>
+
+        <h3>#games</h3>
+        <p>
+          i dont play games much, most of the time its me playing something ive
+          been for years or my friends calling me to join them..
+        </p>
+        <ul>
+          <li>
+            i dont like the direction Roblox is going, ive been on the platform
+            for almost 10 years now, i really like how you can express yourself
+            with custom accessories and avatar, most popular games arent good, i
+            play Nullscape and Horrific Housing, i used to play Swordburst 2 and
+            Flood Escape 2
+          </li>
+          <li>
+            terrara, or tmodloader, this game is just freakin' awesome, im
+            almost on 100% achievements for the base game, planning on playing
+            calamity when i got a better computer! :3
+          </li>
+          <li>
+            i feel like there should be some more here, they are mostly indie
+            games such as adofai, illusion carnival, oneshot, zato (i love the
+            world and everything in it), jsab, catgirl, ...
+          </li>
+        </ul>
+
+        <h3>#honorable-mentions</h3>
+        <p>
+          sky (imperfectinsanity), <i>she held me at gunpoint on this one</i>,
+          as, well, the only person ive ever been on a call on discord with so
+          far
+        </p>
       </div>
       <div class="r"></div>
       <div class="bl"></div>
@@ -269,6 +326,11 @@
             okay look at me <i>(pretend im talking to you)</i>, the characters
             are so amazing, i really love chito and yuuri, i can find myself in
             chito's character :3
+          </li>
+          <li>
+            about yuuri, she <i>miighhtttt</i> lack some intelligence, but hey,
+            shes a great friend (esp when chito needs help with crossing high
+            places) and shes really good with guns too
           </li>
           <li>
             the music, ooooough, its so cute and catchy (complete opposite to
