@@ -75,7 +75,7 @@ button {
       background-color: transparent;
       width: 56px;
       height: 56px;
-      border-radius: 4px;
+      border-radius: 8px;
       border: solid 2px rgba(0, 0, 0, 0.1);
       transition: border-color 0.2s ease-in-out;
 
@@ -201,4 +201,36 @@ button {
   z-index: 50;
   animation: show ease-in-out 0.5s;
   font-family: Papyrus;
+}
+
+@media screen and (width <=440px) {
+  #keyboard {
+    gap: 8px;
+    > div {
+      gap: 4px;
+    }
+  }
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 12px;
+  }
+
+  #game {
+    div[class^="letter"] {
+      width: 48px;
+      height: 48px;
+
+      > p {
+        font-size: 18px;
+      }
+    }
+  }
 }
