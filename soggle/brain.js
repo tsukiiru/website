@@ -1,4 +1,4 @@
-import thing from "assets/words.json" with { type: "json" };
+import thing from "./assets/words.json" with { type: "json" };
 
 const SOGGY = "soggy";
 const WORD_LEN = 5;
