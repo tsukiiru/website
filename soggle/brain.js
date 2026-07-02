@@ -1,4 +1,4 @@
-import thing from "./assets/words.json" with { type: "json" };
+import thing from "/assets/words.json" with { type: "json" };
 
 const SOGGY = "soggy";
 const WORD_LEN = 5;
@@ -10,7 +10,7 @@ const KEYBOARD = [
   ["delete", "z", "x", "c", "v", "b", "n", "m", "enter"],
 ];
 
-const YIPPEEE = new Audio("./assets/sounds/confetti.mp3");
+const YIPPEEE = new Audio("/assets/sounds/confetti.mp3");
 YIPPEEE.volume = 1.0;
 
 let currentRow = 1;
@@ -121,7 +121,7 @@ async function checkWord() {
     sleep(1500);
     yourdidit();
     sleep(2000);
-    await generateSogs("./assets/images/soggy.avif", true);
+    await generateSogs("/assets/images/soggy.avif", true);
   } else if (currentRow < ROWS_NUMBER) {
     currentRow = currentRow + 1;
     updateRowElement();
@@ -130,7 +130,7 @@ async function checkWord() {
     console.log("you are DRY!!!!!!!!!!");
     won = true;
     yourdidntit();
-    await generateSogs("./assets/images/dry.avif", false);
+    await generateSogs("/assets/images/dry.avif", false);
   }
 
   imdoinganimation = false;
@@ -271,7 +271,7 @@ async function generateSogs(the_image, soggy) {
     let random = Math.random();
 
     if (soggy) {
-      const MEOW = new Audio("./assets/sounds/meow.flac");
+      const MEOW = new Audio("/assets/sounds/meow.flac");
       MEOW.volume = random * 0.7; // im saving your ears.
       MEOW.play();
     }
