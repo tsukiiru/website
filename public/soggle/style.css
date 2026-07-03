@@ -1,11 +1,11 @@
 @font-face {
   font-family: Bookerly;
-  src: url(soggle/assets/fonts/Bookerly.ttf);
+  src: url(/assets/fonts/Bookerly.ttf);
 }
 
 @font-face {
   font-family: Papyrus;
-  src: url(soggle/assets/fonts/papyrus.ttf);
+  src: url(/assets/fonts/papyrus.ttf);
 }
 
 body {
