@@ -1,18 +1,10 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "builds": [
-    {
-      "src": "**",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
     {
       "src": "/soggle",
       "dest": "/soggle/index.html"
-    },
-    {
-      "handle": "filesystem"
     }
   ]
 }
