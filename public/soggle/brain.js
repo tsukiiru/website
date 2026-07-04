@@ -103,10 +103,12 @@ let used_letter = [];
 
 function useKey(element, key, color) {
   element.classList.add("anim", color);
-  if (used_letter.includes(key)) return;
+  if (used_letter.includes(key) && !SOGGY.includes(key)) return;
 
   used_letter.push(key);
   let key_el = keyboardElement.getElementsByClassName(key)[0];
+  if (key_el.classList.contains("green")) return;
+
   key_el.classList.add(color);
 }
 
@@ -137,9 +139,8 @@ async function checkWord() {
 
     won = true;
     YIPPEEE.play();
-    await sleep(1500);
     yourdidit();
-    await sleep(2000);
+    await sleep(1000);
     await generateSogs("soggle/assets/images/soggy.avif", true);
   } else if (currentRow < ROWS_NUMBER) {
     currentRow = currentRow + 1;

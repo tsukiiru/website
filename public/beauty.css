@@ -409,12 +409,11 @@ i {
     > * {
       width: 88px;
       height: 31px;
-      will-change: border;
-      transition: border 0.2s linear;
-      border: 2px solid transparent;
+      will-change: transform;
+      transition: transform 0.3s ease-in-out;
 
       &:hover {
-        border-color: var(--window-title-bg-color);
+        transform: scale(1.05) translateY(3px);
       }
     }
   }
