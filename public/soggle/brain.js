@@ -18,6 +18,14 @@ let currentInput = "";
 let rowElement;
 let imdoinganimation = false;
 let won = false;
+let keyboardElement;
+
+spawnRows();
+updateRowElement();
+generateKeyboard();
+
+document.getElementById("replay").addEventListener("click", resetGame);
+document.addEventListener("keydown", (event) => keyDown(event));
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
 
@@ -47,7 +55,7 @@ function matchKeyboardKey(el, key) {
 }
 
 function generateKeyboard() {
-  const keyboardElement = document.getElementById("keyboard");
+  keyboardElement = document.getElementById("keyboard");
 
   for (let i = 0; i <= 2; i++) {
     let row = KEYBOARD[i];
@@ -90,6 +98,17 @@ function spawnRows() {
   }
 }
 
+let used_letter = [];
+
+function useKey(element, key, color) {
+  element.classList.add(color);
+  if (used_letter.contains(key)) return;
+
+  used_letter.push(key);
+  let key_el = keyboardElement.children.getElementsByClassName(key)[0];
+  key_el.classList.add(color);
+}
+
 async function checkWord() {
   if (imdoinganimation || won) return;
   if (currentInput.length != WORD_LEN || !isInDictionary()) {
@@ -100,27 +119,26 @@ async function checkWord() {
   imdoinganimation = true;
 
   for (let i = 0; i < WORD_LEN; i++) {
-    let element = rowElement.childNodes[i];
     let currentLetter = currentInput[i];
     let sog = SOGGY[i];
+    let element = rowElement.children[i];
 
-    // what the fuck is this syntax lmao
-    if (currentLetter == sog) element.classList.add("green");
+    if (currentLetter == sog) useKey(element, currentLetter, "green");
     else if (currentLetter != sog && SOGGY.includes(currentLetter))
-      element.classList.add("yellow");
-    else element.classList.add("gray");
+      useKey(element, currentLetter, "yellow");
+    else useKey(element, currentLetter, "gray");
 
     await sleep(ANIMATION_DELAY);
   }
 
   if (isSoggy()) {
     console.log("you are soggy!!");
-    won = true;
 
+    won = true;
     YIPPEEE.play();
-    sleep(1500);
+    await sleep(1500);
     yourdidit();
-    sleep(2000);
+    await sleep(2000);
     await generateSogs("soggle/assets/images/soggy.avif", true);
   } else if (currentRow < ROWS_NUMBER) {
     currentRow = currentRow + 1;
@@ -128,6 +146,7 @@ async function checkWord() {
     currentInput = "";
   } else {
     console.log("you are DRY!!!!!!!!!!");
+
     won = true;
     yourdidntit();
     await generateSogs("soggle/assets/images/dry.avif", false);
@@ -137,9 +156,8 @@ async function checkWord() {
 }
 
 function addKey(key) {
-  if (!isLetter(key) || currentInput.length >= 5 || imdoinganimation || won) {
+  if (!isLetter(key) || currentInput.length >= 5 || imdoinganimation || won)
     return;
-  }
 
   currentInput = currentInput.concat(key);
   updateRowDisplay();
@@ -147,8 +165,8 @@ function addKey(key) {
 
 function updateRowDisplay() {
   for (let i = 0; i < WORD_LEN; i++) {
-    let box = rowElement.childNodes[i];
-    let element = box.childNodes[0];
+    let box = rowElement.children[i];
+    let element = box.children[0];
     let currentLetter = currentInput[i];
 
     if (!currentLetter) {
@@ -187,9 +205,7 @@ function pop() {
 function playShakyAnimation() {
   rowElement.classList.add("wrong");
 
-  setTimeout(() => {
-    rowElement.classList.remove("wrong");
-  }, 200);
+  setTimeout(() => rowElement.classList.remove("wrong"), 200);
 }
 
 function handleKey(key) {
@@ -211,13 +227,6 @@ function keyDown(event) {
 
   handleKey(event.key.toLowerCase());
 }
-
-spawnRows();
-updateRowElement();
-generateKeyboard();
-
-document.getElementById("replay").addEventListener("click", resetGame);
-document.addEventListener("keydown", (event) => keyDown(event));
 
 function yourdidit() {
   const el = document.createElement("h1");
