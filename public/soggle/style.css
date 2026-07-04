@@ -92,21 +92,22 @@ button {
       border-color: rgba(0, 0, 0, 0.6) !important;
     }
 
-    > .gray {
-      background-color: #717c7c !important;
-      animation: show ease-in-out 0.2s;
-    }
-
-    > .green {
-      background-color: #98bb6c !important;
-      animation: show ease-in-out 0.2s;
-    }
-
-    > .yellow {
-      background-color: #e6c384 !important;
+    .anim {
       animation: show ease-in-out 0.2s;
     }
   }
+}
+
+.gray {
+  background-color: #717c7c !important;
+}
+
+.green {
+  background-color: #98bb6c !important;
+}
+
+.yellow {
+  background-color: #e6c384 !important;
 }
 
 @keyframes show {

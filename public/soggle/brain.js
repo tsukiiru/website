@@ -20,6 +20,7 @@ let imdoinganimation = false;
 let won = false;
 let keyboardElement;
 
+const START_TIME = Date.now();
 spawnRows();
 updateRowElement();
 generateKeyboard();
@@ -101,8 +102,8 @@ function spawnRows() {
 let used_letter = [];
 
 function useKey(element, key, color) {
-  element.classList.add(color);
-  if (used_letter.contains(key)) return;
+  element.classList.add("anim", color);
+  if (used_letter.includes(key)) return;
 
   used_letter.push(key);
   let key_el = keyboardElement.children.getElementsByClassName(key)[0];
@@ -230,7 +231,7 @@ function keyDown(event) {
 
 function yourdidit() {
   const el = document.createElement("h1");
-  el.textContent = "you sogged!";
+  el.textContent = `you sogged!(${(Date.now() - START_TIME) / 1000}s)`;
   el.className = "sogged";
 
   let random = Math.random();
@@ -243,7 +244,7 @@ function yourdidit() {
 
 async function yourdidntit() {
   const el = document.createElement("h1");
-  el.textContent = "you are dry!!!!!!!!";
+  el.textContent = `you are dry!!!!!!!!(${(Date.now() - START_TIME) / 1000}s)`;
   el.className = "dried";
 
   let random = Math.random();
