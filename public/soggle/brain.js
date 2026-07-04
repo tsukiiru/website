@@ -109,6 +109,7 @@ function useKey(element, key, color) {
   let key_el = keyboardElement.getElementsByClassName(key)[0];
   if (key_el.classList.contains("green")) return;
 
+  key_el.classList.remove("yellow", "gray");
   key_el.classList.add(color);
 }
 
