@@ -106,7 +106,7 @@ function useKey(element, key, color) {
   if (used_letter.includes(key)) return;
 
   used_letter.push(key);
-  let key_el = keyboardElement.children.getElementsByClassName(key)[0];
+  let key_el = keyboardElement.getElementsByClassName(key)[0];
   key_el.classList.add(color);
 }
 
