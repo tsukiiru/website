@@ -39,7 +39,7 @@ i {
   height: 100%;
   object-fit: cover;
   inset: 0;
-  filter: brightness(0.5);
+  filter: brightness(1.5);
   user-select: none;
 }
 
@@ -127,6 +127,10 @@ i {
     width: 16px;
     height: 16px;
     border: none;
+
+    &:hover {
+      background: url("/assets/images/components/exit-button-hovered.avif");
+    }
   }
 
   .rectangular-thing {
@@ -364,7 +368,7 @@ i {
   transition: transform ease-in-out 0.4s;
 
   &:hover {
-    transform: translateY(-4px) scale(1.1);
+    transform: scale(1.1);
     color: var(--earthling);
     cursor: pointer;
     text-shadow: 2px 2px 4px var(--earthling);
@@ -409,11 +413,15 @@ i {
     > * {
       width: 88px;
       height: 31px;
+      filter: brightness(1);
       will-change: transform;
-      transition: transform 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
-        transform: scale(1.05) translateY(3px);
+        transform: translateY(2px);
+        > img {
+          filter: brightness(1.2);
+        }
       }
     }
   }

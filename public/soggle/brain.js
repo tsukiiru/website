@@ -100,6 +100,7 @@ function spawnRows() {
 }
 
 let used_letter = [];
+let used_words = [];
 
 function useKey(element, key, color) {
   element.classList.add("anim", color);
@@ -115,7 +116,11 @@ function useKey(element, key, color) {
 
 async function checkWord() {
   if (imdoinganimation || won) return;
-  if (currentInput.length != WORD_LEN || !isInDictionary()) {
+  if (
+    currentInput.length != WORD_LEN ||
+    !isInDictionary() ||
+    used_words.includes(currentInput)
+  ) {
     playShakyAnimation();
     return;
   }
@@ -134,6 +139,8 @@ async function checkWord() {
 
     await sleep(ANIMATION_DELAY);
   }
+
+  used_words.push(currentInput);
 
   if (isSoggy()) {
     console.log("you are soggy!!");

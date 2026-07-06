@@ -2,21 +2,99 @@
 <html>
   <head>
     <link rel="icon" href="assets/images/favicon.ico" />
-    <title>oops! not found~ T.T</title>
+    <title>ERRor!??</title>
   </head>
   <body>
-    <h1>you find yourself in a strange place...</h1>
+    <img class="grid" />
 
-    <a href="./index.html">go back to the main page?</a>
+    <div class="box">
+      <h1>you found yourself in a strange place...</h1>
+      <a href="/">go back?</a>
+    </div>
   </body>
   <style>
+    @font-face {
+      font-family: m5x7;
+      src: url(/assets/fonts/m5x7.ttf);
+    }
+
     body {
-      background-color: black;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: m5x7;
+    }
+
+    .grid {
+      position: fixed;
+      background: url("assets/images/components/checker-pattern.avif") repeat;
+      background-color: rgba(200, 0, 200, 1);
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .box {
+      z-index: 1;
+      background-color: rgba(20, 20, 20, 1);
+      padding: 20px;
+      border-radius: 4px;
+      animation: hovering ease-in-out 7s infinite;
+      transition: box-shadow 0.3s ease-in-out;
+
+      &:hover {
+        box-shadow: 0 0 10px 15px rgba(240, 0, 240, 0.5);
+      }
     }
 
     h1,
     a {
-      color: white;
+      color: whitesmoke;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 49px;
+    }
+
+    a {
+      font-size: 28px;
+    }
+
+    @keyframes hovering {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
     }
   </style>
+  <script>
+    const grid = document.getElementsByClassName("grid")[0];
+    const sleep = (delay) =>
+      new Promise((resolve) => setTimeout(resolve, delay));
+    const AMOUNT = 1;
+
+    animateGrid();
+
+    async function animateGrid() {
+      let px = 0;
+      let py = 0;
+
+      while (true) {
+        px += AMOUNT;
+        py += AMOUNT;
+        grid.style.backgroundPosition = `${px}px ${py}px`;
+        await sleep(10);
+      }
+    }
+  </script>
 </html>
