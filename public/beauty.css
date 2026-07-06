@@ -39,7 +39,7 @@ i {
   height: 100%;
   object-fit: cover;
   inset: 0;
-  filter: brightness(1.5);
+  filter: brightness(0.9);
   user-select: none;
 }
 
@@ -413,13 +413,19 @@ i {
     > * {
       width: 88px;
       height: 31px;
-      filter: brightness(1);
       will-change: transform;
-      transition: all 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
 
       &:hover {
         transform: translateY(2px);
-        > img {
+      }
+
+      > img {
+        filter: brightness(1);
+        will-change: filter;
+        transition: filter 0.3s linear;
+
+        &:hover {
           filter: brightness(1.2);
         }
       }
