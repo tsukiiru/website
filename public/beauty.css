@@ -86,18 +86,18 @@ i {
   margin: 14px;
   align-self: end;
   color: var(--window-bg-color);
-  animation: wiggle infinite ease-in-out 4s;
+  animation: wiggle infinite ease-in-out 8s;
 }
 
 @keyframes wiggle {
   0% {
-    transform: rotateZ(-10deg);
+    transform: rotateZ(-3deg);
   }
   50% {
-    transform: rotateZ(15deg);
+    transform: rotateZ(5deg);
   }
   100% {
-    transform: rotateZ(-10deg);
+    transform: rotateZ(-3deg);
   }
 }
 
