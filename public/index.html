@@ -62,42 +62,46 @@
         //
       </div>
 
-      <!-- okay,, now that you are here, you'll have to endure the horrible code by a high school student -->
-      <div class="status-cafe">
-        <div class="tl"></div>
-        <div class="t"></div>
-        <div class="tr"></div>
-        <div class="l"></div>
+      <!-- okay,, now that you are here, you'll have to endure the horrible code by a self-taught high school student & freshman -->
+      <div class="row">
+        <div class="status-cafe">
+          <div class="tl"></div>
+          <div class="t"></div>
+          <div class="tr"></div>
+          <div class="l"></div>
 
-        <div class="title">
-          <a href="https://status.cafe">~/.cache/status.cafe</a>
-        </div>
+          <div class="title">
+            <a href="https://status.cafe">~/.cache/status.cafe</a>
+          </div>
 
-        <div class="r"></div>
-        <div class="l"></div>
-        <div class="content">
-          <span id="sc-info" class="info">...</span>
-          <p id="sc-content" class="full">loading...</p>
+          <div class="r"></div>
+          <div class="l"></div>
+          <div class="content">
+            <span id="sc-info" class="info">...</span>
+            <p id="sc-content" class="full">loading...</p>
 
-          <script>
-            fetch("https://status.cafe/users/tsukian/status.json")
-              .then((r) => r.json())
-              .then((r) => {
-                if (!r.content.length) {
+            <script>
+              fetch("https://status.cafe/users/tsukian/status.json")
+                .then((r) => r.json())
+                .then((r) => {
+                  if (!r.content.length) {
+                    document.getElementById("sc-info").innerHTML =
+                      "nothing to see here";
+                    return;
+                  }
                   document.getElementById("sc-info").innerHTML =
-                    "nothing to see here";
-                  return;
-                }
-                document.getElementById("sc-info").innerHTML =
-                  "> tsuki - " + r.timeAgo;
-                document.getElementById("sc-content").innerHTML = r.content;
-              });
-          </script>
+                    "> tsuki - " + r.timeAgo;
+                  document.getElementById("sc-content").innerHTML = r.content;
+                });
+            </script>
+          </div>
+          <div class="r"></div>
+          <div class="bl"></div>
+          <div class="b"></div>
+          <div class="br"></div>
         </div>
-        <div class="r"></div>
-        <div class="bl"></div>
-        <div class="b"></div>
-        <div class="br"></div>
+
+        <p class="music" id="music">nothing here...</p>
       </div>
     </div>
 
@@ -193,7 +197,7 @@
         </ul>
         <h3>#whattheheck?</h3>
         <p>
-          <b>tsuki</b><i>(it means "the moon" in japanese)</i> is a little name
+          <b>tsuki</b> <i>(it means "the moon" in japanese)</i> is a little name
           i pick for myself online, i really like the feeling it offers, i like
           the moon (i also took some inspo from my previous nickname, lunar)
         </p>
@@ -223,10 +227,11 @@
         <h3>#interests</h3>
         <ul>
           <li>
-            i listen to music, my fav artists are Good Kid, The Vanished People,
-            BoyWithUke, Radiohead, and many more
-            <i>(check my last.fm profile)</i>, about genres... i dunno? i can
-            consume
+            i listen to music,
+            <i
+              >(check out my last.fm profile for some artists i frequently
+              listen to)</i
+            >, about genres... i dunno? i can consume
             <i>pretty much</i>
             <a href="/assets/images/pic/real.avif">anything</a>, except for
             <i>phonk</i> or those ai-generated songs (ai is an absolute no-no)
@@ -285,6 +290,15 @@
             calamity when i got a better computer! :3
           </li>
           <li>adofai... gulp.</li>
+          <p><i>despite everything, it's still you...</i></p>
+          <li>undertale and deltarune :drool:</li>
+          <li>
+            alright just, undertale and deltarune is perfect, like you cant ask
+            for anything better than them. they have a really warm and close
+            feeling in the pixelated and simple graphics. music, wow, toby
+            really cooked with the music, they're just too good. and the
+            storyline too..
+          </li>
           <li>
             i feel like there should be some more here, they are mostly indie
             games such as illusion carnival, oneshot, zato (i love the world and
@@ -468,6 +482,46 @@
         button.addEventListener("click", () => {
           CLICK_AUDIO.play();
         });
+      });
+
+      let music = [
+        { artist: "Toby Fox", name: "Home", src: "assets/sounds/Home.webm" },
+        {
+          artist: "Toby Fox",
+          name: "Memory",
+          src: "assets/sounds/Memory.webm",
+        },
+        {
+          artist: "Toby Fox",
+          name: "It's raining somewhere else",
+          src: "assets/sounds/It\'s\ Raining\ Somewhere\ Else.webm",
+        },
+      ];
+
+      let current_song;
+      let current_audio = new Audio();
+      const SONG_DISPLAY = document.getElementById("music");
+
+      random_song();
+
+      function random_song() {
+        let selected = music[Math.floor(music.length * Math.random())];
+
+        if (current_song && selected.name == current_song.name) {
+          random_song();
+        }
+
+        current_song = selected;
+        current_audio.src = current_song.src;
+        current_audio.play();
+
+        SONG_DISPLAY.textContent = `Playing: ${current_song.name} - ${current_song.artist}`;
+      }
+
+      current_audio.addEventListener("ended", function () {
+        current_audio.pause();
+        current_audio.currentTime = 0;
+        random_song();
       });
     </script>
   </body>

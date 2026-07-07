@@ -75,6 +75,32 @@ i {
   }
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+.music {
+  font-size: 21px;
+  margin: 14px;
+  align-self: end;
+  color: var(--window-bg-color);
+  animation: wiggle infinite ease-in-out 4s;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotateZ(-10deg);
+  }
+  50% {
+    transform: rotateZ(15deg);
+  }
+  100% {
+    transform: rotateZ(-10deg);
+  }
+}
+
 .window,
 .status-cafe {
   display: grid;
@@ -418,6 +444,7 @@ i {
 
       &:hover {
         transform: translateY(2px);
+        filter: brightness(1.2);
       }
 
       > img {
