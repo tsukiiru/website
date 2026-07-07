@@ -91,13 +91,13 @@ i {
 
 @keyframes wiggle {
   0% {
-    transform: rotateZ(-3deg);
+    transform: rotateZ(-2deg);
   }
   50% {
-    transform: rotateZ(5deg);
+    transform: rotateZ(3deg);
   }
   100% {
-    transform: rotateZ(-3deg);
+    transform: rotateZ(-2deg);
   }
 }
 
@@ -444,17 +444,13 @@ i {
 
       &:hover {
         transform: translateY(2px);
-        filter: brightness(1.2);
+        filter: brightness(1.1);
       }
 
       > img {
         filter: brightness(1);
         will-change: filter;
         transition: filter 0.3s linear;
-
-        &:hover {
-          filter: brightness(1.2);
-        }
       }
     }
   }
