@@ -83,9 +83,26 @@ i {
 
 .music {
   font-size: 21px;
-  margin: 14px;
+  margin: 7px;
   align-self: end;
+  text-decoration: none;
+  user-select: none;
+  text-decoration-skip-ink: none;
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
   color: var(--window-bg-color);
+  transition: all ease-in-out 0.3s;
+  text-decoration-color: transparent;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-style: wavy !important;
+    text-decoration-color: var(--window-bg-color-alt);
+  }
+}
+
+.wiggle {
   animation: wiggle infinite ease-in-out 8s;
 }
 
@@ -174,16 +191,23 @@ i {
   /* yeah,, i dont know what those things are called */
 }
 
-#contacts {
+#notice {
   width: 400px;
+  height: 350px;
+  left: 300px;
+  top: 300px;
+}
+
+#contacts {
+  width: 420px;
   height: 350px;
   left: 250px;
   top: 250px;
 }
 
 #home {
-  width: 450px;
-  height: 400px;
+  width: 500px;
+  height: 450px;
   left: 50px;
   top: 150px;
 }
@@ -218,9 +242,9 @@ i {
     user-select: none;
 
     img {
-      border-radius: 7px;
       margin-top: 7px;
       margin-bottom: 7px;
+      border: solid 2px var(--earthling);
     }
 
     ul {

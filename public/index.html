@@ -13,38 +13,6 @@
 
     <link href="/assets/images/favicon.ico?v=2" rel="icon" />
     <link rel="stylesheet" href="beauty.css" />
-    <script src="/assets/interact.min.js"></script>
-    <script>
-      let i = 5;
-
-      interact(".window").draggable({
-        allowFrom: ".title>span",
-        modifiers: [
-          interact.modifiers.restrictRect({
-            restriction: document.documentElement,
-            endOnly: true,
-          }),
-        ],
-        listeners: {
-          start(event) {
-            const target = event.target;
-
-            i += 1;
-            target.style.zIndex = i;
-          },
-
-          move(event) {
-            const target = event.target;
-            const x = parseFloat(target.getAttribute("data-x") || 0) + event.dx;
-            const y = parseFloat(target.getAttribute("data-y") || 0) + event.dy;
-
-            target.style.transform = `translate(${x}px, ${y}px)`;
-            target.setAttribute("data-x", x);
-            target.setAttribute("data-y", y);
-          },
-        },
-      });
-    </script>
   </head>
   <body>
     <img src="/assets/images/background/cafe.avif" class="wallpaper" />
@@ -60,6 +28,7 @@
         //
         <a href="#contacts">contacts</a>
         //
+        <a href="#notice" style="color: var(--blush) !important">notice!!</a>
       </div>
 
       <!-- okay,, now that you are here, you'll have to endure the horrible code by a self-taught high school student & freshman -->
@@ -101,13 +70,7 @@
           <div class="br"></div>
         </div>
 
-        <p
-          class="music"
-          title="if you dont hear anything, please allow autoplay on this site!"
-          id="music"
-        >
-          nothing here...
-        </p>
+        <button class="music" id="music">nothing here...</button>
       </div>
     </div>
 
@@ -157,6 +120,39 @@
             <i>(featured!!)</i>
           </li>
         </ul>
+      </div>
+      <div class="r"></div>
+      <div class="bl"></div>
+      <div class="b"></div>
+      <div class="br"></div>
+    </div>
+
+    <div class="window hidden" id="notice" data-x="0" data-y="0">
+      <div class="tl"></div>
+      <div class="t"></div>
+      <div class="tr"></div>
+      <div class="l"></div>
+
+      <div class="title">
+        <span>~/files/notice.txt</span>
+        <button class="exit-button"></button>
+      </div>
+
+      <div class="r"></div>
+      <div class="l"></div>
+      <div class="content">
+        <p>
+          i added music, you can see it on the right of the status.cafe panel
+        </p>
+        <p>
+          due to some autoplay policies in chrome, i cant make it autoplay, so
+          <b>you, yes you</b>, needs to play/pause it yourself
+        </p>
+        <p>
+          and if for some reason, you cant hear anything, make sure autoplay is
+          toggled in this website!
+        </p>
+        <img src="assets/images/pic/autoplay.avif" />
       </div>
       <div class="r"></div>
       <div class="bl"></div>
@@ -433,8 +429,39 @@
         /></a>
       </div>
     </div>
-
+    <script src="/assets/interact.min.js"></script>
     <script>
+      let i = 5;
+
+      let els = document.getElementsByClassName("window");
+      Array.prototype.forEach.call(els, function (w) {
+        w.addEventListener("click", (e) => {
+          i += 1;
+          w.style.zIndex = i;
+        });
+      });
+
+      interact(".window").draggable({
+        allowFrom: ".title>span",
+        modifiers: [
+          interact.modifiers.restrictRect({
+            restriction: document.documentElement,
+            endOnly: true,
+          }),
+        ],
+        listeners: {
+          move(event) {
+            const target = event.target;
+            const x = parseFloat(target.getAttribute("data-x") || 0) + event.dx;
+            const y = parseFloat(target.getAttribute("data-y") || 0) + event.dy;
+
+            target.style.transform = `translate(${x}px, ${y}px)`;
+            target.setAttribute("data-x", x);
+            target.setAttribute("data-y", y);
+          },
+        },
+      });
+
       const WINDOW_ANIMATION_TIME_MS = 300;
 
       document.querySelectorAll(".navigate>a, #home a").forEach((link) => {
@@ -490,7 +517,7 @@
         });
       });
 
-      let music = [
+      const MUSIC = [
         { artist: "Toby Fox", name: "Home", src: "assets/sounds/Home.webm" },
         {
           artist: "Toby Fox",
@@ -504,14 +531,31 @@
         },
       ];
 
+      let song_playing = false;
+      let text;
       let current_song;
       let current_audio = new Audio();
       const SONG_DISPLAY = document.getElementById("music");
 
+      SONG_DISPLAY.addEventListener("click", function () {
+        song_playing = !song_playing;
+
+        if (song_playing) {
+          current_audio.play();
+          SONG_DISPLAY.textContent = `PLAYING: ${text}`;
+          SONG_DISPLAY.classList.add("wiggle");
+        } else {
+          current_audio.pause();
+          SONG_DISPLAY.textContent = `PAUSED: ${text}`;
+          SONG_DISPLAY.classList.remove("wiggle");
+        }
+      });
+
       random_song();
+      SONG_DISPLAY.textContent = `PAUSED: ${text}`;
 
       function random_song() {
-        let selected = music[Math.floor(music.length * Math.random())];
+        let selected = MUSIC[Math.floor(MUSIC.length * Math.random())];
 
         if (current_song && selected.name == current_song.name) {
           random_song();
@@ -519,13 +563,13 @@
 
         current_song = selected;
         current_audio.src = current_song.src;
-        current_audio.play();
+        text = `${current_song.name} - ${current_song.artist}`;
 
-        SONG_DISPLAY.textContent = `Playing: ${current_song.name} - ${current_song.artist}`;
+        if (song_playing) current_audio.play();
+        else current_audio.pause();
       }
 
       current_audio.addEventListener("ended", function () {
-        current_audio.pause();
         current_audio.currentTime = 0;
         random_song();
       });
