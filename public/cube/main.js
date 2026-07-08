@@ -25,7 +25,7 @@ const loader = new GLTFLoader();
 let cube;
 
 loader.load(
-  "./assets/sogcube.glb",
+  "/cube/assets/sogcube.glb",
   function (gltf) {
     cube = gltf.scene;
     scene.add(gltf.scene);
