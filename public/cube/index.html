@@ -11,15 +11,85 @@
         }
       }
     </script>
+
+    <style>
+      body {
+        overflow: hidden;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #slider {
+        position: fixed;
+        bottom: 5%;
+        left: 5%;
+        width: 90%;
+        border-radius: 25px;
+        height: 15px;
+
+        &::-webkit-slider-thumb {
+          background: transparent;
+          background-image: url("/cube/assets/sog.avif");
+          background-repeat: no-repeat;
+          background-size: 100%;
+          background-position: 7px;
+          border: none;
+          width: 50px;
+          height: 70px;
+          cursor: grab;
+
+          transition: transform ease-in-out 0.1s;
+        }
+
+        &::-moz-range-thumb {
+          background: transparent;
+          background-image: url("/cube/assets/sog.avif");
+          background-repeat: no-repeat;
+          background-size: 100%;
+          background-position: 7px;
+          border: none;
+          width: 50px;
+          height: 70px;
+          cursor: grab;
+
+          transition: transform ease-in-out 0.1s;
+        }
+
+        &:active::-moz-range-thumb {
+          transform: scale(0.9) rotateZ(4deg);
+        }
+
+        &:active::-webkit-slider-thumb {
+          transform: scale(0.9) rotateZ(4deg);
+        }
+      }
+
+      @media screen and (width <= 63rem) {
+        #slider {
+          bottom: 10% !important;
+          height: 30px !important;
+          &::-moz-range-thumb {
+            width: 100px !important;
+            height: 140px !important;
+          }
+          &::-webkit-slider-thumb {
+            width: 100px !important;
+            height: 140px !important;
+          }
+        }
+      }
+    </style>
   </head>
-  <body style="overflow: hidden; width: 100%; height: 100vh; margin: 0">
-    <input
-      id="slider"
-      type="range"
-      min="1"
-      max="50"
-      style="position: fixed; bottom: 5px; left: 10px"
-    />
-    <script type="module" src="cube/main.js"></script>
+  <body>
+    <input id="slider" type="range" value="1" min="0" max="100" />
+    <datalist id="markers">
+      <option value="0"></option>
+      <option value="25"></option>
+      <option value="50"></option>
+      <option value="75"></option>
+      <option value="100"></option>
+    </datalist>
+    <script type="module" src="/cube/main.js"></script>
   </body>
 </html>
