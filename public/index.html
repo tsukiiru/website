@@ -1,6 +1,5 @@
 <!doctype html>
 <!-- what are you doing in the source code? -->
-<!-- funnnnn1111 yayyy!! -->
 <html>
   <head>
     <title>tsuki's little corner :3</title>
@@ -23,51 +22,42 @@
 
     <div class="stack">
       <div class="navigate">
-        >_
+        📁
         <a href="#">info</a>
         //
         <a href="#contacts">contacts</a>
         //
-        <a href="#notice" style="color: var(--blush) !important">notice!!</a>
+        <a href="#notice" style="color: var(--window-bg-color-alt) !important"
+          >notice ⚠</a
+        >
       </div>
 
-      <!-- okay,, now that you are here, you'll have to endure the horrible code by a self-taught high school student & freshman -->
       <div class="row">
         <div class="status-cafe">
-          <div class="tl"></div>
-          <div class="t"></div>
-          <div class="tr"></div>
-          <div class="l"></div>
-
           <div class="title">
-            <a href="https://status.cafe">~/.cache/status.cafe</a>
+            <a href="https://status.cafe">~/.cache/status.cafe☕</a>
           </div>
-
-          <div class="r"></div>
-          <div class="l"></div>
           <div class="content">
-            <span id="sc-info" class="info">...</span>
-            <p id="sc-content" class="full">loading...</p>
+            <div class="dots">
+              <span id="sc-info" class="info">...</span>
+              <p id="sc-content" class="full">loading...</p>
 
-            <script>
-              fetch("https://status.cafe/users/tsukian/status.json")
-                .then((r) => r.json())
-                .then((r) => {
-                  if (!r.content.length) {
+              <script>
+                fetch("https://status.cafe/users/tsukian/status.json")
+                  .then((r) => r.json())
+                  .then((r) => {
+                    if (!r.content.length) {
+                      document.getElementById("sc-info").innerHTML =
+                        "nothing to see here";
+                      return;
+                    }
                     document.getElementById("sc-info").innerHTML =
-                      "nothing to see here";
-                    return;
-                  }
-                  document.getElementById("sc-info").innerHTML =
-                    "> tsuki - " + r.timeAgo;
-                  document.getElementById("sc-content").innerHTML = r.content;
-                });
-            </script>
+                      "> tsuki - " + r.timeAgo;
+                    document.getElementById("sc-content").innerHTML = r.content;
+                  });
+              </script>
+            </div>
           </div>
-          <div class="r"></div>
-          <div class="bl"></div>
-          <div class="b"></div>
-          <div class="br"></div>
         </div>
 
         <button class="music" id="music">nothing here...</button>
@@ -75,295 +65,278 @@
     </div>
 
     <div class="window hidden" id="contacts" data-x="0" data-y="0">
-      <div class="tl"></div>
-      <div class="t"></div>
-      <div class="tr"></div>
-      <div class="l"></div>
-
       <div class="title">
-        <span>~/files/socials.txt</span>
-        <button class="exit-button"></button>
+        <span>~/files/socials.txt🔗</span>
+        <button class="exit-button">✕</button>
       </div>
 
-      <div class="r"></div>
-      <div class="l"></div>
       <div class="content">
-        <p>some places you can find me i think :thinker:</p>
-        <h3>#spawnpoints</h3>
-        <ul>
-          <li>
-            <a href="https://discord.com/users/451335202342436866">discord</a>
-            <i
-              >(in case you cant message me, join
-              <a href="/waitroom"><em>this</em></a
-              >)</i
-            >
-          </li>
-          <li>
-            <a href="https://x.com/tsukiiru">twitter</a>
-            <i>(who even calls it "X" anyway)</i>
-          </li>
-          <li>
-            <a href="mailto:parsley.dew@proton.me">email </a>
-          </li>
-          <li>
-            <a href="https://github.com/tsukiiru">github</a>
-          </li>
-          <li>
-            <a href="https://matrix.to/#/@tsukiiru:matrix.org">matrix</a>
-          </li>
-          <li>
-            <a href="https://www.last.fm/user/lunar1um">last.fm</a>
-          </li>
-          <li>
-            <a href="/form">form</a>
-            <i>(featured!!)</i>
-          </li>
-        </ul>
+        <div class="dots">
+          <p>some places you can find me i think :thinker:</p>
+          <h3>#spawnpoints</h3>
+          <ul>
+            <li>
+              <a href="https://discord.com/users/451335202342436866">discord</a>
+              <i
+                >(in case you cant message me, join
+                <a href="/waitroom"><em>this</em></a
+                >)</i
+              >
+            </li>
+            <li>
+              <a href="https://x.com/tsukiiru">twitter</a>
+              <i>(who even calls it "X" anyway)</i>
+            </li>
+            <li>
+              <a href="mailto:parsley.dew@proton.me">email </a>
+            </li>
+            <li>
+              <a href="https://github.com/tsukiiru">github</a>
+            </li>
+            <li>
+              <a href="https://matrix.to/#/@tsukiiru:matrix.org">matrix</a>
+            </li>
+            <li>
+              <a href="https://www.last.fm/user/lunar1um">last.fm</a>
+            </li>
+            <li>
+              <a href="/form">form</a>
+              <i>(featured!!)</i>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="r"></div>
-      <div class="bl"></div>
-      <div class="b"></div>
-      <div class="br"></div>
     </div>
 
     <div class="window hidden" id="notice" data-x="0" data-y="0">
-      <div class="tl"></div>
-      <div class="t"></div>
-      <div class="tr"></div>
-      <div class="l"></div>
-
       <div class="title">
-        <span>~/files/notice.txt</span>
-        <button class="exit-button"></button>
+        <span>~/files/notice.txt📌</span>
+        <button class="exit-button">✕</button>
       </div>
 
-      <div class="r"></div>
-      <div class="l"></div>
       <div class="content">
-        <p>
-          i added music, you can see it on the right of the status.cafe panel
-        </p>
-        <p>
-          due to some autoplay policies in chrome, i cant make it autoplay, so
-          <b>you, yes you</b>, needs to play/pause it yourself
-        </p>
-        <p>
-          and if for some reason, you cant hear anything, make sure autoplay is
-          toggled in this website!
-        </p>
-        <img src="assets/images/pic/autoplay.avif" />
+        <div class="dots">
+          <h3>fonts</h3>
+          <p>
+            the website (only) looks good with the right font, which is cozette,
+            a pixelated font
+          </p>
+          <h3>music</h3>
+          <p>
+            i added music, you can see it on the right of the status.cafe panel
+          </p>
+          <p>
+            due to some autoplay policies in chrome, i cant make it autoplay, so
+            <b>you, yes you</b>, needs to play/pause it yourself
+          </p>
+          <p>
+            and if for some reason, you cant hear anything, make sure autoplay
+            is toggled in this website!
+          </p>
+          <img src="assets/images/pic/autoplay.avif" />
+        </div>
       </div>
-      <div class="r"></div>
-      <div class="bl"></div>
-      <div class="b"></div>
-      <div class="br"></div>
     </div>
 
     <div class="window hidden" id="home" data-x="0" data-y="0">
-      <div class="tl"></div>
-      <div class="t"></div>
-      <div class="tr"></div>
-      <div class="l"></div>
-
       <div class="title">
-        <span>~/files/weeee.txt</span>
-        <button class="exit-button"></button>
+        <span>~/files/weeee.txt💤</span>
+        <button class="exit-button">✕</button>
       </div>
 
-      <div class="r"></div>
-      <div class="l"></div>
       <div class="content">
-        <p>hello hi!! its me, <b>tsuki</b>!</p>
-        <p>along with trillions upon billions of other nicknames</p>
-        <h3>#notice!</h3>
-        <ul>
-          <li>im sensitive to sounds, cant really read social cues (autism)</li>
-          <li>
-            i tend to avoid discussions, specifically really intense and serious
-            ones, i cant handle pressure really well ;-;
-          </li>
-          <li>
-            please think before saying anything, if you have possibly made me
-            felt uncomfortable, ill just ignore you and avoid talking to you
-            from that point onwards
-          </li>
-          <li>
-            i have high sensory processing sensitivity, apologies if i get
-            emotional sometimes
-          </li>
-          <li>
-            i dont like being ignored, if you have any problem with me, just
-            tell me, thats still better than leaving me hanging ;-;
-          </li>
-        </ul>
-        <h3>#whattheheck?</h3>
-        <p>
-          <b>tsuki</b> <i>(it means "the moon" in japanese)</i> is a little name
-          i pick for myself online, i really like the feeling it offers, i like
-          the moon (i also took some inspo from my previous nickname, lunar)
-        </p>
-        <p>
-          as i mentioned above, you can call me literally anything, as long as
-          its not an insult (light-hearted is okay) or something with a
-          <i>really really</i> bad purpose behind it
-        </p>
-        <h3>#whoami</h3>
-        <ul>
-          <li>
-            im a silly and quirky creature from the planet
-            <em><a href="https://radio.garden">earth</a></em
-            >, or more specifically from Vietnam!!1
-          </li>
-          <li>
-            im not really active online, ill try to reply asap if you need me
-            though!!
-          </li>
-          <li>i absolutely looove cute and cozy things :3</li>
-          <li>im &lt;3 nature and animals, especially cats and dogs!!</li>
-          <li>
-            hmm, i love my frens, mhm yes, i cant live without my friends, or
-            ill die from loneliness and boredom
-          </li>
-        </ul>
-        <h3>#interests</h3>
-        <ul>
-          <li>
-            i listen to music,
-            <i
-              >(check out my last.fm profile for some artists i frequently
-              listen to)</i
-            >, about genres... i dunno? i can consume
-            <i>pretty much</i>
-            <a href="/assets/images/pic/real.avif">anything</a>, except for
-            <i>phonk</i> or those ai-generated songs (ai is an absolute no-no)
-          </li>
-          <li>
-            ive read a lot of books, with genres ranging from science fiction,
-            romance, fantasy, mystery, historical, self-help, etc.....
-          </li>
-          <li>
-            the same can be applied to watching movies, for the last year the
-            number of movies (or tv-series) ive watched has increased
-            significantly
-          </li>
-          <li>
-            im also interested in photography, journaling, drawing, and playing
-            music!
-          </li>
-          <li>
-            about games... hmm,,,, id say i enjoy adventure games, a bit more
-            towards resources management type of game, you know. i especially
-            love games that put effort into their graphics, but not realistic
-            ones. sometimes i enjoy it being challenging, sometimes it's short
-            and sweet, depending on my mood :p
-          </li>
-          <li>
-            also my computer is <i>pretty</i> bad for most mainstream games
-            nowadays, so you can still spot me playing games from over 10 years
-            ago hehe
-          </li>
-        </ul>
-        <h3>#anime</h3>
-        <p>i dont read mangas or watch animes often,,,</p>
-        <p>here are some worth mentioning</p>
-        <ul>
-          <li>my favourite anime oat, <a href="#glt">Girls' Last Tour</a>!!</li>
-          <li>Nichijou</li>
-          <li>Shimeji's Simulation</li>
-        </ul>
+        <div class="dots">
+          <p>hello hi!! its me, <b>tsuki</b>!</p>
+          <p>along with trillions upon billions of other nicknames</p>
+          <h3>#notice!</h3>
+          <ul>
+            <li>
+              im sensitive to sounds and cant really read social cues (due to
+              mild autism)
+            </li>
+            <li>
+              i tend to avoid discussions, specifically really intense and
+              serious ones, i cant handle pressure really well ;-;
+            </li>
+            <li>
+              please think before saying anything, if you have possibly made me
+              felt uncomfortable, ill just ignore you and avoid talking to you
+              from that point onwards
+            </li>
+            <li>
+              i have high sensory processing sensitivity, apologies if i get
+              emotional sometimes
+            </li>
+          </ul>
+          <h3>#pronouns</h3>
+          <p>im nonbinary! (they/them)</p>
+          <ul>
+            <li>
+              tsuki (つき) <i>(meaning "the moon" in japanese)</i> is a little
+              name i pick for myself online, i really like the feeling it
+              offers, i love the moon (i also took some inspo from my previous
+              nickname that lasted for at least 2 years, lunar)
+            </li>
+            <li>
+              as i mentioned above, you can call me literally anything, as long
+              as its not an insult (light-hearted is okay) or something with a
+              <i>really really</i> bad purpose behind it
+            </li>
+          </ul>
+          <h3>#whoami</h3>
+          <ul>
+            <li>
+              im a silly and quirky creature from the planet
+              <em><a href="https://radio.garden">earth</a></em
+              >, or more specifically from Vietnam!!1
+            </li>
+            <li>
+              im not really active online, ill try to reply asap if you need me
+              though!!
+            </li>
+            <li>i absolutely looove cute and cozy things :3</li>
+            <li>im &lt;3 nature and animals, especially cats and dogs!!</li>
+            <li>
+              hmm, i love my frens, mhm yes, i cant live without my friends, or
+              ill die from loneliness and boredom
+            </li>
+          </ul>
+          <h3>#interests</h3>
+          <ul>
+            <p>im interested in several cool things</p>
+            <li>
+              i listen to music,
+              <i
+                >(check out my last.fm profile for some artists i frequently
+                listen to)</i
+              >, about genres... idk? i can consume
+              <i>pretty much</i>
+              <a href="/assets/images/pic/real.avif">anything</a>, except for
+              <i>phonk</i> or those ai-generated songs (ai is an absolute no-no)
+            </li>
+            <li>
+              ive read a lot of books, with genres ranging from science fiction,
+              romance, fantasy, mystery, historical, self-help, etc.....
+            </li>
+            <li>
+              the same can be applied to watching movies, for the last year the
+              number of movies (or tv-series) ive watched has increased
+              significantly
+            </li>
+            <li>
+              im also interested in photography, journaling, drawing, and
+              playing music!
+            </li>
+            <li>
+              about games... hmm,,,, id say i enjoy adventure games, a bit more
+              towards resources management type of game, you know. also i
+              especially love games that put effort into their graphics, but not
+              realistic ones. sometimes i enjoy it being challenging, sometimes
+              it's short and sweet, depending on my mood :p
+            </li>
+            <li>
+              also my computer is <i>pretty</i> bad for most mainstream games
+              nowadays, so dont be surprise when you spot me playing games that
+              are over 10 years old hehe
+            </li>
+            <li>
+              talking about old games,,, i think it doesnt matter if you are
+              "late" in playing/watching anything, the values and the beauty of
+              those art pieces can still be there, even after many years. yk,
+              like really really ancient paintings, they still are very valuable
+              even to these days..
+            </li>
+          </ul>
+          <h3>#anime</h3>
+          <p>i dont read mangas or watch animes often,,,</p>
+          <p>here are some worth mentioning</p>
+          <ul>
+            <li>
+              my favourite anime oat, <a href="#glt">Girls' Last Tour</a>!!
+            </li>
+            <li>Nichijou</li>
+            <li>Shimeji's Simulation</li>
+          </ul>
 
-        <h3>#games</h3>
-        <p>
-          i dont play games much, most of the time its me playing something ive
-          been for years or my friends calling me to join them..
-        </p>
-        <ul>
-          <li>
-            i dont like the direction Roblox is going, ive been on the platform
-            for almost 10 years now. however i really like how you can express
-            yourself with custom accessories and avatar, most popular games
-            arent good, i play Nullscape and some other niche games you probably
-            have never heard of
-          </li>
-          <li>
-            terrara, or tmodloader, this game is just freakin' awesome, im
-            almost on 100% achievements for the base game, planning on playing
-            calamity when i got a better computer! :3
-          </li>
-          <li>adofai... gulp.</li>
-          <p><i>despite everything, it's still you...</i></p>
-          <li>undertale and deltarune :drool:</li>
-          <li>
-            alright just, undertale and deltarune is perfect, like you cant ask
-            for anything better than them. they have a really warm and close
-            feeling in the pixelated and simple graphics. music, wow, toby
-            really cooked with the music, they're just too good. and the
-            storyline too..
-          </li>
-          <li>
-            i feel like there should be some more here, they are mostly indie
-            games such as illusion carnival, oneshot, zato (i love the world and
-            everything in it), jsab, catgirl, ...
-          </li>
-        </ul>
+          <h3>#games</h3>
+          <p>
+            i dont play games much, most of the time its me playing something
+            ive been for years or my friends calling me to join them..
+          </p>
+          <ul>
+            <li>
+              i dont like the direction Roblox is going, ive been on the
+              platform for almost 10 years now. however i really like how you
+              can express yourself with custom accessories and avatar, most
+              popular games arent good, i play Nullscape and some other niche
+              games you probably have never heard of
+            </li>
+            <li>
+              terrara, or tmodloader, this game is just freakin' awesome, im
+              almost on 100% achievements for the base game, planning on playing
+              calamity when i got a better computer! :3
+            </li>
+            <li>adofai... gulp.</li>
+            <p><i>despite everything, it's still you...</i></p>
+            <li>undertale and deltarune :drool:</li>
+            <li>
+              alright just, undertale and deltarune is perfect, like you cant
+              ask for anything better than them. they have a really warm and
+              close feeling in the pixelated and simple graphics. music, wow,
+              toby really cooked with the music, they're just too good. and the
+              storyline too..
+            </li>
+            <li>
+              i feel like there should be some more here, they are mostly indie
+              games such as illusion carnival, oneshot, zato (i love the world
+              and everything in it), jsab, catgirl, ...
+            </li>
+          </ul>
 
-        <p>
-          i always mention this, buutttt, talk to me if you want to know me
-          more, i cant just reveal everything here lel
-        </p>
+          <p>
+            i always mention this, buutttt, talk to me if you want to know me
+            more, i cant just reveal everything here lel
+          </p>
+        </div>
       </div>
-      <div class="r"></div>
-      <div class="bl"></div>
-      <div class="b"></div>
-      <div class="br"></div>
     </div>
 
     <!-- sub windows -->
     <div class="window subwindow hidden" id="glt" data-x="0" data-y="0">
-      <div class="tl"></div>
-      <div class="t"></div>
-      <div class="tr"></div>
-      <div class="l"></div>
-
       <div class="title">
         <span>~/files/girls-last-tour.txt</span>
-        <button class="exit-button"></button>
+        <button class="exit-button">✕</button>
       </div>
 
-      <div class="r"></div>
-      <div class="l"></div>
       <div class="content">
-        <p><i>Note: might contain spoilers!</i></p>
-        <p>i have nothing to say, this anime is just goated</p>
-        <img src="assets/images/fih.webp" />
-        <ul>
-          <li>
-            okay look at me <i>(pretend im talking to you)</i>, the characters
-            are so amazing, i really love chito and yuuri, i can find myself in
-            chito's character :3
-          </li>
-          <li>
-            about yuuri, she <i>miighhtttt</i> lack some intelligence, but hey,
-            shes a great friend (esp when chito needs help with crossing high
-            places) and shes really good with guns too
-          </li>
-          <li>
-            the music, ooooough, its so cute and catchy (complete opposite to
-            whats happening in the anime btw), i totally didnt spend hours
-            listening to it over and over again
-          </li>
-          <li>
-            but oh my god, its so sad, why does it have to be so depressing???
-            this is so unfair, i actually got depressed for a whole week after
-            reading the manga..... i hate this so much,,,
-          </li>
-        </ul>
+        <div class="dots">
+          <p><i>Note: might contain spoilers!</i></p>
+          <p>i have nothing to say, this anime is just goated</p>
+          <img src="assets/images/fih.webp" />
+          <ul>
+            <li>
+              okay look at me <i>(pretend im talking to you)</i>, the characters
+              are so amazing, i really love chito and yuuri, i can find myself
+              in chito's character :3
+            </li>
+            <li>
+              about yuuri, she <i>miighhtttt</i> lack some intelligence, but
+              hey, shes a great friend (esp when chito needs help with crossing
+              high places) and shes really good with guns too
+            </li>
+            <li>
+              the music, ooooough, its so cute and catchy (complete opposite to
+              whats happening in the anime btw), i totally didnt spend hours
+              listening to it over and over again
+            </li>
+            <li>
+              but oh my god, its so sad, why does it have to be so depressing???
+              this is so unfair, i actually got depressed for a whole week after
+              reading the manga..... i hate this so much,,,
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="r"></div>
-      <div class="bl"></div>
-      <div class="b"></div>
-      <div class="br"></div>
     </div>
 
     <div class="webbadges">
@@ -385,6 +358,9 @@
         /></a>
         <a href="https://nixos.org"
           ><img src="assets/images/things/nixos.webp" title="i use nixos btw"
+        /></a>
+        <a href="https://niri-wm.github.io/niri"
+          ><img src="assets/images/things/niri.gif" title="aka the best wm"
         /></a>
         <a href="https://justuse.org"
           ><img src="assets/images/things/justuse.avif"
@@ -409,10 +385,6 @@
         <a href="https://archive.org"
           ><img src="assets/images/things/internet_archive.avif"
         /></a>
-
-        <a href="https://niri-wm.github.io/niri"
-          ><img src="assets/images/things/niri.webp" title="aka the best wm"
-        /></a>
       </div>
 
       <p>+peeps</p>
@@ -430,170 +402,6 @@
       </div>
     </div>
     <script src="/assets/interact.min.js"></script>
-    <script>
-      let i = 5;
-
-      let els = document.getElementsByClassName("window");
-      Array.prototype.forEach.call(els, function (w) {
-        w.addEventListener("click", (e) => {
-          i += 1;
-          w.style.zIndex = i;
-        });
-      });
-
-      interact(".window").draggable({
-        allowFrom: ".title>span",
-        modifiers: [
-          interact.modifiers.restrictRect({
-            restriction: document.documentElement,
-            endOnly: true,
-          }),
-        ],
-        listeners: {
-          move(event) {
-            const target = event.target;
-            const x = parseFloat(target.getAttribute("data-x") || 0) + event.dx;
-            const y = parseFloat(target.getAttribute("data-y") || 0) + event.dy;
-
-            target.style.transform = `translate(${x}px, ${y}px)`;
-            target.setAttribute("data-x", x);
-            target.setAttribute("data-y", y);
-          },
-        },
-      });
-
-      const WINDOW_ANIMATION_TIME_MS = 300;
-
-      document.querySelectorAll(".navigate>a, #home a").forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          const id = link.getAttribute("href").slice(1);
-
-          history.pushState(null, "", link.getAttribute("href"));
-
-          let elementClassList = !id
-            ? document.getElementById("home").classList
-            : document.getElementById(id)?.classList;
-
-          // hidden
-          if (elementClassList.contains("hidden")) {
-            elementClassList.remove("animate-window-out", "hidden");
-            elementClassList.add("animate-window-in");
-          } else {
-            elementClassList.remove("animate-window-in");
-            elementClassList.add("animate-window-out");
-
-            setTimeout(
-              () => elementClassList.add("hidden"),
-              WINDOW_ANIMATION_TIME_MS,
-            );
-          }
-        });
-      });
-
-      const CLICK_AUDIO = new Audio("assets/sounds/click.wav");
-      const WHOOSH_AUDIO = new Audio("assets/sounds/whoosh.wav");
-      WHOOSH_AUDIO.volume = 0.8;
-
-      document.querySelectorAll(".exit-button").forEach((button) => {
-        button.addEventListener("click", () => {
-          WHOOSH_AUDIO.play();
-          let targetClassList = button.closest(".window").classList;
-
-          targetClassList.remove("animate-window-in");
-          targetClassList.add("animate-window-out");
-
-          setTimeout(
-            () => targetClassList.add("hidden"),
-            WINDOW_ANIMATION_TIME_MS,
-          );
-        });
-      });
-
-      document.querySelectorAll("a").forEach((button) => {
-        button.addEventListener("click", () => {
-          CLICK_AUDIO.play();
-        });
-      });
-
-      const MUSIC = [
-        { artist: "Toby Fox", name: "Home", src: "assets/sounds/Home.flac" },
-        {
-          artist: "Toby Fox",
-          name: "Memory",
-          src: "assets/sounds/Memory.flac",
-        },
-        {
-          artist: "Toby Fox",
-          name: "It's raining somewhere else",
-          src: "assets/sounds/It\'s\ Raining\ Somewhere\ Else.flac",
-        },
-        {
-          artist: "C418",
-          name: "Subwoofer Lullaby",
-          src: "assets/sounds/Subwoofer\ Lullaby.flac",
-        },
-        {
-          artist: "Toby Fox",
-          name: "You can always come home",
-          src: "assets/sounds/You\ Can\ Always\ Come\ Home.flac",
-        },
-      ];
-
-      let song_playing = false;
-      let text;
-      let current_song;
-      let current_audio = new Audio();
-      const SONG_DISPLAY = document.getElementById("music");
-
-      random_song();
-      SONG_DISPLAY.textContent = `PAUSED: ${text}`;
-
-      SONG_DISPLAY.addEventListener("click", function () {
-        song_playing = !song_playing;
-
-        if (song_playing) {
-          current_audio.play();
-        } else {
-          current_audio.pause();
-        }
-        updateElement();
-      });
-
-      function updateElement() {
-        if (song_playing) {
-          SONG_DISPLAY.textContent = `PLAYING: ${text}`;
-          SONG_DISPLAY.classList.add("wiggle");
-        } else {
-          SONG_DISPLAY.textContent = `PAUSED: ${text}`;
-          SONG_DISPLAY.classList.remove("wiggle");
-        }
-      }
-
-      function random_song() {
-        let selected = MUSIC[Math.floor(MUSIC.length * Math.random())];
-
-        if (current_song && selected.name == current_song.name) {
-          random_song();
-          return;
-        }
-
-        current_song = selected;
-        current_audio.src = current_song.src;
-
-        text = `${current_song.name} - ${current_song.artist}`;
-        updateElement();
-
-        if (song_playing) current_audio.play();
-        else current_audio.pause();
-      }
-
-      current_audio.addEventListener("ended", function () {
-        current_audio.pause();
-        current_audio.currentTime = 0;
-        random_song();
-      });
-    </script>
+    <script src="/index.js"></script>
   </body>
 </html>

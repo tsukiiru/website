@@ -8,15 +8,22 @@
   src: url(/assets/fonts/m5x7.ttf);
 }
 
+@font-face {
+  font-family: Cozette;
+  src: url(/assets/fonts/CozetteVector.ttf); /* browser doesnt support bitmap fonts :/ */
+}
+
 :root {
-  --window-bg-color: #ffeecc;
-  --window-bg-color-alt: #ffeeccaa;
-  --window-title-bg-color: #ffeecc;
-  --window-text-color: #46425e;
-  --window-text-color-alt: #46425eaa;
-  --blush: #ff6973;
-  --earthling: #00b9be;
-  --foam: #56949f;
+  --window-bg-color: #e6def9;
+  --window-bg-color-alt: #eebeda;
+  --window-border: #101512;
+  --window-title-bg-color: #bf9497;
+  --window-text-color: #47384a;
+  --window-text-color-alt: #242639aa;
+  --dots: #24263930;
+  --highlight-1: #42427b;
+  --highlight-2: #6b7598;
+  --highlight-3: #374545;
 }
 
 body {
@@ -25,7 +32,7 @@ body {
   margin: 0;
   overflow: hidden;
   gap: 8px;
-  font-family: "m5x7";
+  font-family: "Cozette";
 }
 
 i {
@@ -48,13 +55,13 @@ i {
   align-items: start;
   flex-direction: column;
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  bottom: 18px;
+  left: 18px;
 
   > .navigate {
     display: flex;
     align-items: start;
-    font-size: 24px;
+    font-size: 16px;
     gap: 8px;
     color: var(--window-bg-color);
     user-select: none;
@@ -78,11 +85,11 @@ i {
 .row {
   display: flex;
   flex-direction: row;
-  gap: 14px;
+  gap: 18px;
 }
 
 .music {
-  font-size: 21px;
+  font-size: 16px;
   margin: 7px;
   align-self: end;
   text-decoration: none;
@@ -92,8 +99,8 @@ i {
   border: none;
   font-family: inherit;
   color: var(--window-bg-color);
-  transition: all ease-in-out 0.3s;
-  text-decoration-color: transparent;
+  cursor: pointer;
+  transition: transform ease-in-out 0.3s;
 
   &:hover {
     text-decoration: underline;
@@ -108,84 +115,62 @@ i {
 
 @keyframes wiggle {
   0% {
-    transform: rotateZ(-2deg);
+    transform: rotateZ(-1deg);
   }
   50% {
-    transform: rotateZ(3deg);
+    transform: rotateZ(2deg);
   }
   100% {
-    transform: rotateZ(-2deg);
+    transform: rotateZ(-1deg);
   }
 }
 
 .window,
 .status-cafe {
-  display: grid;
-  grid-template-columns: 8px 1fr 8px;
-  grid-template-rows: 8px 24px 1fr 8px;
-  image-rendering: pixelated;
+  background-color: var(--window-bg-color);
+  border: 2px solid var(--window-border);
+  border-radius: 4px;
 
-  > .tl {
-    background: url("/assets/images/components/top-left-corner.avif");
-    width: 8px;
-    height: 8px;
-  }
-
-  > .tr {
-    background: url("/assets/images/components/top-right-corner.avif");
-    width: 8px;
-    height: 8px;
-  }
-
-  > .br {
-    background: url("/assets/images/components/bottom-right-corner.avif");
-    width: 8px;
-    height: 8px;
-  }
-
-  > .bl {
-    background: url("/assets/images/components/bottom-left-corner.avif");
-    width: 8px;
-    height: 8px;
-  }
-
-  > .t {
-    background: url("/assets/images/components/top-border.avif") repeat-x;
-  }
-
-  > .b {
-    background: url("/assets/images/components/bottom-border.avif") repeat-x;
-  }
-
-  > .l {
-    background: url("/assets/images/components/left-border.avif") repeat-y;
-  }
-
-  > .r {
-    background: url("/assets/images/components/right-border.avif") repeat-y;
+  .title {
+    background: var(--window-title-bg-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-content: center;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-top-left-radius: 2.5px;
+    border-top-right-radius: 2.5px;
+    height: 24px;
+    font-size: 18px;
   }
 
   .exit-button {
-    background: url("/assets/images/components/exit-button.avif");
-    width: 16px;
-    height: 16px;
+    color: var(--window-text-color-alt);
+    width: 18px;
+    height: 18px;
     border: none;
+    background: transparent;
+    text-align: center;
+    line-height: 18px;
+    font-size: 18px;
+    padding: 0;
+    font-family: inherit;
+    font-weight: bold;
 
     &:hover {
-      background: url("/assets/images/components/exit-button-hovered.avif");
+      color: var(--highlight-3);
     }
   }
 
-  .rectangular-thing {
-    background: url("/assets/images/components/rectangle.avif");
-    width: 16px;
-    height: 16px;
-  }
-
-  .minus-thing {
-    background: url("/assets/images/components/minus.avif");
-    width: 16px;
-    height: 16px;
+  .content {
+    .dots {
+      background-image: radial-gradient(var(--dots) 1px, transparent 0);
+      background-size: 20px 20px;
+      height: fit-content;
+      width: 100%;
+    }
   }
 
   /* yeah,, i dont know what those things are called */
@@ -224,31 +209,36 @@ i {
 }
 
 .window {
-  display: grid;
   position: absolute;
+  display: flex;
+  flex-direction: column;
   opacity: 0;
+  z-index: 5;
 
   > .content {
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 8px;
+    padding-bottom: 8px;
     overflow-y: scroll;
     scrollbar-width: none;
     background-color: var(--window-bg-color);
-    line-height: 1.6rem;
-    font-size: 24px;
+    line-height: 1.3rem;
+    font-size: 18px;
     color: var(--window-text-color);
     text-align: left;
     user-select: none;
+    border-bottom-left-radius: 2.5px;
+    border-bottom-right-radius: 2.5px;
 
     img {
       margin-top: 7px;
       margin-bottom: 7px;
-      border: solid 2px var(--earthling);
+      border: solid 2px var(--highlight-2);
     }
 
     ul {
-      list-style-type: "> ";
+      list-style-type: "★ ";
       margin: 0;
       padding-left: 1rem;
 
@@ -259,8 +249,8 @@ i {
     }
 
     h3 {
-      margin: 20px 0 0 0;
-      font-size: 24px;
+      margin: 5px 0 0 0;
+      font-size: 18px;
       color: var(--window-text-color-alt);
       user-select: none;
     }
@@ -271,18 +261,18 @@ i {
     }
 
     b {
-      color: var(--blush);
+      color: var(--highlight-1);
       user-select: none;
     }
 
     em {
-      color: var(--earthling);
+      color: var(--highlight-2);
       user-select: none;
     }
 
     a {
       text-decoration: none;
-      color: var(--foam);
+      color: var(--highlight-3);
       text-decoration-skip-ink: none;
       user-select: none;
       /*
@@ -313,13 +303,10 @@ i {
   }
 
   > .title {
-    background: var(--window-title-bg-color);
-    display: grid;
     grid-template-columns: 1fr 16px;
     grid-template-rows: 1fr;
     padding-left: 4px;
     padding-right: 4px;
-    font-size: 24px;
 
     > span {
       color: var(--window-text-color);
@@ -327,34 +314,37 @@ i {
       vertical-align: middle;
       margin: 0;
       letter-spacing: 2pt;
-      text-transform: uppercase;
       user-select: none;
+      padding-top: 2px;
+      padding-bottom: 2px;
     }
   }
 }
 
 .status-cafe {
-  max-width: 352px;
-  max-height: 96px;
+  max-width: 350px;
+  max-height: 95px;
 
   > .content {
     background-color: var(--window-bg-color);
     padding-left: 8px;
+    padding-right: 8px;
     padding-top: 8px;
-    display: grid;
-    grid-template-rows: 16px 1fr;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
+    border-bottom-left-radius: 2.5px;
+    border-bottom-right-radius: 2.5px;
 
-    > .info {
-      font-size: 24px;
-      color: var(--blush);
+    .info {
+      font-size: 18px;
+      color: var(--highlight-1);
       user-select: none;
       margin: 0;
     }
 
-    > .full {
-      font-size: 24px;
+    .full {
+      font-size: 18px;
       color: var(--window-text-color);
 
       user-select: none;
@@ -365,17 +355,11 @@ i {
   }
 
   > .title {
-    background: var(--window-title-bg-color);
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    align-content: center;
-    align-items: center;
     padding-left: 8px;
     padding-right: 8px;
 
     > a {
-      font-size: 24px;
+      font-size: 18px;
       color: var(--window-text-color);
       width: fit-content;
 
@@ -383,7 +367,6 @@ i {
       text-align: left;
       vertical-align: middle;
       margin: 0;
-      text-transform: uppercase;
       text-decoration: none;
       text-decoration-skip-ink: none;
       letter-spacing: 2pt;
@@ -399,8 +382,8 @@ i {
 
 .spinny {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  bottom: 18px;
+  right: 18px;
   color: var(--window-bg-color);
   font-family: asciid;
   user-select: none;
@@ -419,9 +402,9 @@ i {
 
   &:hover {
     transform: scale(1.1);
-    color: var(--earthling);
+    color: var(--highlight-2);
     cursor: pointer;
-    text-shadow: 2px 2px 4px var(--earthling);
+    text-shadow: 2px 2px 4px var(--highlight-2);
 
     animation-duration: 2s;
   }
@@ -439,7 +422,7 @@ i {
 .webbadges {
   width: 100%;
   position: absolute;
-  top: 16px;
+  top: 18px;
   padding-left: 8px;
   padding-right: 8px;
 
@@ -447,7 +430,7 @@ i {
     width: 100%;
     text-align: center;
     margin: 0;
-    font-size: 16px;
+    font-size: 12px;
     color: var(--window-bg-color-alt);
     user-select: none;
   }
