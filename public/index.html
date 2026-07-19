@@ -21,47 +21,45 @@
     </div>
 
     <div class="stack">
-      <div class="navigate">
-        📁
-        <a href="#">info</a>
-        //
-        <a href="#contacts">contacts</a>
-        //
-        <a href="#notice" style="color: var(--window-bg-color-alt) !important"
-          >notice ⚠</a
-        >
-      </div>
+      <div>
+        <div class="navigate">
+          📁
+          <a href="#">info</a>
+          //
+          <a href="#contacts">contacts</a>
+          //
+          <a href="#notice" style="color: var(--window-bg-color-alt) !important"
+            >notice ⚠</a
+          >
+        </div>
 
-      <div class="row">
         <div class="status-cafe">
           <div class="title">
             <a href="https://status.cafe">~/.cache/status.cafe☕</a>
           </div>
           <div class="content">
-            <div class="dots">
-              <span id="sc-info" class="info">...</span>
-              <p id="sc-content" class="full">loading...</p>
+            <span id="sc-info" class="info">...</span>
+            <p id="sc-content" class="full">loading...</p>
 
-              <script>
-                fetch("https://status.cafe/users/tsukian/status.json")
-                  .then((r) => r.json())
-                  .then((r) => {
-                    if (!r.content.length) {
-                      document.getElementById("sc-info").innerHTML =
-                        "nothing to see here";
-                      return;
-                    }
+            <script>
+              fetch("https://status.cafe/users/tsukian/status.json")
+                .then((r) => r.json())
+                .then((r) => {
+                  if (!r.content.length) {
                     document.getElementById("sc-info").innerHTML =
-                      "> tsuki - " + r.timeAgo;
-                    document.getElementById("sc-content").innerHTML = r.content;
-                  });
-              </script>
-            </div>
+                      "nothing to see here";
+                    return;
+                  }
+                  document.getElementById("sc-info").innerHTML =
+                    "> tsuki - " + r.timeAgo;
+                  document.getElementById("sc-content").innerHTML = r.content;
+                });
+            </script>
           </div>
         </div>
-
-        <button class="music" id="music">nothing here...</button>
       </div>
+
+      <button class="music" id="music">nothing here...</button>
     </div>
 
     <div class="window hidden" id="contacts" data-x="0" data-y="0">
@@ -71,40 +69,41 @@
       </div>
 
       <div class="content">
-        <div class="dots">
-          <p>some places you can find me i think :thinker:</p>
-          <h3>#spawnpoints</h3>
-          <ul>
-            <li>
-              <a href="https://discord.com/users/451335202342436866">discord</a>
-              <i
-                >(in case you cant message me, join
-                <a href="/waitroom"><em>this</em></a
-                >)</i
-              >
-            </li>
-            <li>
-              <a href="https://x.com/tsukiiru">twitter</a>
-              <i>(who even calls it "X" anyway)</i>
-            </li>
-            <li>
-              <a href="mailto:parsley.dew@proton.me">email </a>
-            </li>
-            <li>
-              <a href="https://github.com/tsukiiru">github</a>
-            </li>
-            <li>
-              <a href="https://matrix.to/#/@tsukiiru:matrix.org">matrix</a>
-            </li>
-            <li>
-              <a href="https://www.last.fm/user/lunar1um">last.fm</a>
-            </li>
-            <li>
-              <a href="/form">form</a>
-              <i>(featured!!)</i>
-            </li>
-          </ul>
-        </div>
+        <p>
+          some places you can find me (other than where you found this website,
+          <i>prolly discord</i>)!
+        </p>
+        <h3>#spawnpoints</h3>
+        <ul>
+          <li>
+            <a href="https://discord.com/users/451335202342436866">discord</a>
+            <i
+              >(in case you cant message me, join
+              <a href="/waitroom"><em>this</em></a
+              >)</i
+            >
+          </li>
+          <li>
+            <a href="https://x.com/tsukiiru">twitter</a>
+            <i>(who even calls it "X" anyway)</i>
+          </li>
+          <li>
+            <a href="mailto:parsley.dew@proton.me">email </a>
+          </li>
+          <li>
+            <a href="https://github.com/tsukiiru">github</a>
+          </li>
+          <li>
+            <a href="https://matrix.to/#/@tsukiiru:matrix.org">matrix</a>
+          </li>
+          <li>
+            <a href="https://www.last.fm/user/lunar1um">last.fm</a>
+          </li>
+          <li>
+            <a href="/form">form</a>
+            <i>(featured!!)</i>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -115,26 +114,28 @@
       </div>
 
       <div class="content">
-        <div class="dots">
-          <h3>fonts</h3>
-          <p>
-            the website (only) looks good with the right font, which is cozette,
-            a pixelated font
-          </p>
-          <h3>music</h3>
-          <p>
-            i added music, you can see it on the right of the status.cafe panel
-          </p>
-          <p>
-            due to some autoplay policies in chrome, i cant make it autoplay, so
-            <b>you, yes you</b>, needs to play/pause it yourself
-          </p>
-          <p>
-            and if for some reason, you cant hear anything, make sure autoplay
-            is toggled in this website!
-          </p>
-          <img src="assets/images/pic/autoplay.avif" />
-        </div>
+        <h3>the website</h3>
+        <p>
+          the website (only) looks good with the right font, which is cozette, a
+          pixelated font
+        </p>
+        <p>
+          mobile support working in progress!! still best accessing with a
+          computer though!
+        </p>
+        <h3>music</h3>
+        <p>
+          i added music, you can see it on the right of the status.cafe panel
+        </p>
+        <p>
+          due to some autoplay policies in chrome, i cant make it autoplay, so
+          <b>you, yes you</b>, needs to play/pause it yourself
+        </p>
+        <p>
+          and if for some reason, you cant hear anything, make sure autoplay is
+          toggled in this website!
+        </p>
+        <img src="assets/images/pic/autoplay.avif" />
       </div>
     </div>
 
@@ -145,197 +146,197 @@
       </div>
 
       <div class="content">
-        <div class="dots">
-          <p>hello hi!! its me, <b>tsuki</b>!</p>
-          <p>along with trillions upon billions of other nicknames</p>
-          <h3>#notice!</h3>
-          <ul>
-            <li>
-              im sensitive to sounds and cant really read social cues (due to
-              mild autism)
-            </li>
-            <li>
-              i tend to avoid discussions, specifically really intense and
-              serious ones, i cant handle pressure really well ;-;
-            </li>
-            <li>
-              please think before saying anything, if you have possibly made me
-              felt uncomfortable, ill just ignore you and avoid talking to you
-              from that point onwards
-            </li>
-            <li>
-              i have high sensory processing sensitivity, apologies if i get
-              emotional sometimes
-            </li>
-          </ul>
-          <h3>#pronouns</h3>
-          <p>im nonbinary! (they/them)</p>
-          <ul>
-            <li>
-              tsuki (つき) <i>(meaning "the moon" in japanese)</i> is a little
-              name i pick for myself online, i really like the feeling it
-              offers, i love the moon (i also took some inspo from my previous
-              nickname that lasted for at least 2 years, lunar)
-            </li>
-            <li>
-              as i mentioned above, you can call me literally anything, as long
-              as its not an insult (light-hearted is okay) or something with a
-              <i>really really</i> bad purpose behind it
-            </li>
-          </ul>
-          <h3>#whoami</h3>
-          <ul>
-            <li>
-              im a silly and quirky creature from the planet
-              <em><a href="https://radio.garden">earth</a></em
-              >, or more specifically from Vietnam!!1
-            </li>
-            <li>
-              im not really active online, ill try to reply asap if you need me
-              though!!
-            </li>
-            <li>i absolutely looove cute and cozy things :3</li>
-            <li>im &lt;3 nature and animals, especially cats and dogs!!</li>
-            <li>
-              hmm, i love my frens, mhm yes, i cant live without my friends, or
-              ill die from loneliness and boredom
-            </li>
-          </ul>
-          <h3>#interests</h3>
-          <ul>
-            <p>im interested in several cool things</p>
-            <li>
-              i listen to music,
-              <i
-                >(check out my last.fm profile for some artists i frequently
-                listen to)</i
-              >, about genres... idk? i can consume
-              <i>pretty much</i>
-              <a href="/assets/images/pic/real.avif">anything</a>, except for
-              <i>phonk</i> or those ai-generated songs (ai is an absolute no-no)
-            </li>
-            <li>
-              ive read a lot of books, with genres ranging from science fiction,
-              romance, fantasy, mystery, historical, self-help, etc.....
-            </li>
-            <li>
-              the same can be applied to watching movies, for the last year the
-              number of movies (or tv-series) ive watched has increased
-              significantly
-            </li>
-            <li>
-              im also interested in photography, journaling, drawing, and
-              playing music!
-            </li>
-            <li>
-              about games... hmm,,,, id say i enjoy adventure games, a bit more
-              towards resources management type of game, you know. also i
-              especially love games that put effort into their graphics, but not
-              realistic ones. sometimes i enjoy it being challenging, sometimes
-              it's short and sweet, depending on my mood :p
-            </li>
-            <li>
-              also my computer is <i>pretty</i> bad for most mainstream games
-              nowadays, so dont be surprise when you spot me playing games that
-              are over 10 years old hehe
-            </li>
-            <li>
-              talking about old games,,, i think it doesnt matter if you are
-              "late" in playing/watching anything, the values and the beauty of
-              those art pieces can still be there, even after many years. yk,
-              like really really ancient paintings, they still are very valuable
-              even to these days..
-            </li>
-          </ul>
-          <h3>#anime</h3>
-          <p>i dont read mangas or watch animes often,,,</p>
-          <p>here are some worth mentioning</p>
-          <ul>
-            <li>
-              my favourite anime oat, <a href="#glt">Girls' Last Tour</a>!!
-            </li>
-            <li>Nichijou</li>
-            <li>Shimeji's Simulation</li>
-          </ul>
+        <p>hello hi!! its me, <b>tsuki</b>!</p>
+        <p>along with trillions upon billions of other nicknames</p>
+        <h3>#notice!</h3>
+        <ul>
+          <li>
+            im sensitive to sounds and cant really read social cues (due to mild
+            autism)
+          </li>
+          <li>
+            i tend to avoid discussions, specifically really intense and serious
+            ones, i cant handle pressure really well ;-;
+          </li>
+          <li>
+            please think before saying anything, if you have possibly made me
+            felt uncomfortable, ill just ignore you and avoid talking to you
+            from that point onwards
+          </li>
+          <li>
+            i have high sensory processing sensitivity, apologies if i get
+            emotional sometimes
+          </li>
+        </ul>
+        <h3>#pronouns</h3>
+        <p>im nonbinary! (they/them)</p>
+        <ul>
+          <li>
+            tsuki (つき) <i>(meaning "the moon" in japanese)</i> is a little
+            name i pick for myself online, i really like the feeling it offers,
+            i love the moon (i also took some inspo from my previous nickname
+            that lasted for at least 2 years, lunar)
+          </li>
+          <li>
+            as i mentioned above, you can call me literally anything, as long as
+            its not an insult (light-hearted is okay) or something with a
+            <i>really really</i> bad purpose behind it
+          </li>
+        </ul>
+        <h3>#whoami</h3>
+        <ul>
+          <li>
+            im a silly and quirky creature from the planet
+            <em><a href="https://radio.garden">earth</a></em
+            >, or more specifically from Vietnam!!1
+          </li>
+          <li>
+            im not really active online, ill try to reply asap if you need me
+            though!!
+          </li>
+          <li>i absolutely looove cute and cozy things :3</li>
+          <li>im &lt;3 nature and animals, especially cats and dogs!!</li>
+          <li>
+            hmm, i love my frens, mhm yes, i cant live without my friends, or
+            ill die from loneliness and boredom
+          </li>
+        </ul>
+        <h3>#interests</h3>
+        <ul>
+          <p>im interested in several cool things</p>
+          <li>
+            i listen to music,
+            <i
+              >(check out my last.fm profile for some artists i frequently
+              listen to)</i
+            >, about genres... idk? i can consume
+            <i>pretty much</i>
+            <a href="/assets/images/pic/real.avif">anything</a>, except for
+            <i>phonk</i> or those ai-generated songs (ai is an absolute no-no)
+          </li>
+          <li>
+            ive read a lot of books, with genres ranging from science fiction,
+            romance, fantasy, mystery, historical, self-help, etc.....
+          </li>
+          <li>
+            the same can be applied to watching movies, for the last year the
+            number of movies (or tv-series) ive watched has increased
+            significantly
+          </li>
+          <li>
+            im also interested in photography, journaling, drawing, and playing
+            music!
+          </li>
+          <li>
+            about games... hmm,,,, id say i enjoy adventure games, a bit more
+            towards resources management type of game, you know. also i
+            especially love games that put effort into their graphics, but not
+            realistic ones. sometimes i enjoy it being challenging, sometimes
+            it's short and sweet, depending on my mood :p
+          </li>
+          <li>
+            also my computer is <i>pretty</i> bad for most mainstream games
+            nowadays, so dont be surprise when you spot me playing games that
+            are over 10 years old hehe
+          </li>
+          <li>
+            talking about old games,,, i think it doesnt matter if you are
+            "late" in playing/watching anything, the values and the beauty of
+            those art pieces can still be there, even after many years. yk, like
+            really really ancient paintings, they still are very valuable even
+            to these days..
+          </li>
+        </ul>
+        <h3>#anime</h3>
+        <p>i dont read mangas or watch animes often,,,</p>
+        <p>here are some worth mentioning</p>
+        <ul>
+          <li>my favourite anime oat, <a href="#glt">Girls' Last Tour</a>!!</li>
+          <li>Nichijou</li>
+          <li>Shimeji's Simulation</li>
+        </ul>
 
-          <h3>#games</h3>
-          <p>
-            i dont play games much, most of the time its me playing something
-            ive been for years or my friends calling me to join them..
-          </p>
-          <ul>
-            <li>
-              i dont like the direction Roblox is going, ive been on the
-              platform for almost 10 years now. however i really like how you
-              can express yourself with custom accessories and avatar, most
-              popular games arent good, i play Nullscape and some other niche
-              games you probably have never heard of
-            </li>
-            <li>
-              terrara, or tmodloader, this game is just freakin' awesome, im
-              almost on 100% achievements for the base game, planning on playing
-              calamity when i got a better computer! :3
-            </li>
-            <li>adofai... gulp.</li>
-            <p><i>despite everything, it's still you...</i></p>
-            <li>undertale and deltarune :drool:</li>
-            <li>
-              alright just, undertale and deltarune is perfect, like you cant
-              ask for anything better than them. they have a really warm and
-              close feeling in the pixelated and simple graphics. music, wow,
-              toby really cooked with the music, they're just too good. and the
-              storyline too..
-            </li>
-            <li>
-              i feel like there should be some more here, they are mostly indie
-              games such as illusion carnival, oneshot, zato (i love the world
-              and everything in it), jsab, catgirl, ...
-            </li>
-          </ul>
+        <h3>#games</h3>
+        <p>
+          i dont play games much, most of the time its me playing something ive
+          been for years or my friends calling me to join them..
+        </p>
+        <ul>
+          <li>
+            i dont like the direction Roblox is going, ive been on the platform
+            for almost 10 years now. however i really like how you can express
+            yourself with custom accessories and avatar, most popular games
+            arent good, i play Nullscape and some other niche games you probably
+            have never heard of
+          </li>
+          <li>
+            terrara, or tmodloader, this game is just freakin' awesome, im
+            almost on 100% achievements for the base game, planning on playing
+            calamity when i got a better computer! :3
+          </li>
+          <li>adofai... gulp.</li>
+          <p><i>despite everything, it's still you...</i></p>
+          <li>undertale and deltarune :drool:</li>
+          <li>
+            alright just, undertale and deltarune is perfect, like you cant ask
+            for anything better than them. they have a really warm and close
+            feeling in the pixelated and simple graphics. music, wow, toby
+            really cooked with the music, they're just too good. and the
+            storyline too..
+          </li>
+          <li>
+            i feel like there should be some more here, they are mostly indie
+            games such as illusion carnival, oneshot, zato (i love the world and
+            everything in it), jsab, catgirl, ...
+          </li>
+        </ul>
 
-          <p>
-            i always mention this, buutttt, talk to me if you want to know me
-            more, i cant just reveal everything here lel
-          </p>
-        </div>
+        <p>
+          i always mention this, buutttt, talk to me if you want to know me
+          more, i cant just reveal everything here lel
+        </p>
       </div>
     </div>
 
     <!-- sub windows -->
-    <div class="window subwindow hidden" id="glt" data-x="0" data-y="0">
+    <div
+      class="window subwindow hidden"
+      id="glt"
+      data-x="0"
+      data-y="0"
+      style="z-index: 6"
+    >
       <div class="title">
         <span>~/files/girls-last-tour.txt</span>
         <button class="exit-button">✕</button>
       </div>
 
       <div class="content">
-        <div class="dots">
-          <p><i>Note: might contain spoilers!</i></p>
-          <p>i have nothing to say, this anime is just goated</p>
-          <img src="assets/images/fih.webp" />
-          <ul>
-            <li>
-              okay look at me <i>(pretend im talking to you)</i>, the characters
-              are so amazing, i really love chito and yuuri, i can find myself
-              in chito's character :3
-            </li>
-            <li>
-              about yuuri, she <i>miighhtttt</i> lack some intelligence, but
-              hey, shes a great friend (esp when chito needs help with crossing
-              high places) and shes really good with guns too
-            </li>
-            <li>
-              the music, ooooough, its so cute and catchy (complete opposite to
-              whats happening in the anime btw), i totally didnt spend hours
-              listening to it over and over again
-            </li>
-            <li>
-              but oh my god, its so sad, why does it have to be so depressing???
-              this is so unfair, i actually got depressed for a whole week after
-              reading the manga..... i hate this so much,,,
-            </li>
-          </ul>
-        </div>
+        <p><i>Note: might contain spoilers!</i></p>
+        <p>i have nothing to say, this anime is just goated</p>
+        <img src="assets/images/fih.webp" />
+        <ul>
+          <li>
+            okay look at me <i>(pretend im talking to you)</i>, the characters
+            are so amazing, i really love chito and yuuri, i can find myself in
+            chito's character :3
+          </li>
+          <li>
+            about yuuri, she <i>miighhtttt</i> lack some intelligence, but hey,
+            shes a great friend (esp when chito needs help with crossing high
+            places) and shes really good with guns too
+          </li>
+          <li>
+            the music, ooooough, its so cute and catchy (complete opposite to
+            whats happening in the anime btw), i totally didnt spend hours
+            listening to it over and over again
+          </li>
+          <li>
+            but oh my god, its so sad, why does it have to be so depressing???
+            this is so unfair, i actually got depressed for a whole week after
+            reading the manga..... i hate this so much,,,
+          </li>
+        </ul>
       </div>
     </div>
 

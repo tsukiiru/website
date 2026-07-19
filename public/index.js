@@ -1,32 +1,37 @@
-let i = 5;
+function handleWindows() {
+  if (screen.width <= 450) return;
 
-let els = document.getElementsByClassName("window");
-Array.prototype.forEach.call(els, function (w) {
-  w.addEventListener("click", () => {
-    i += 1;
-    w.style.zIndex = i;
+  let els = document.getElementsByClassName("window");
+  let i = 5;
+  Array.prototype.forEach.call(els, function (w) {
+    w.addEventListener("mousedown", () => {
+      i += 1;
+      w.style.zIndex = i;
+    });
   });
-});
 
-interact(".window").draggable({
-  allowFrom: ".title>span",
-  modifiers: [
-    interact.modifiers.restrictRect({
-      endOnly: true,
-    }),
-  ],
-  listeners: {
-    move(event) {
-      const target = event.target;
-      const x = parseFloat(target.getAttribute("data-x") || 0) + event.dx;
-      const y = parseFloat(target.getAttribute("data-y") || 0) + event.dy;
+  interact(".window").draggable({
+    allowFrom: ".title>span",
+    modifiers: [
+      interact.modifiers.restrictRect({
+        endOnly: true,
+      }),
+    ],
+    listeners: {
+      move(event) {
+        const target = event.target;
+        const x = parseFloat(target.getAttribute("data-x") || 0) + event.dx;
+        const y = parseFloat(target.getAttribute("data-y") || 0) + event.dy;
 
-      target.style.transform = `translate(${x}px, ${y}px)`;
-      target.setAttribute("data-x", x);
-      target.setAttribute("data-y", y);
+        target.style.transform = `translate(${x}px, ${y}px)`;
+        target.setAttribute("data-x", x);
+        target.setAttribute("data-y", y);
+      },
     },
-  },
-});
+  });
+}
+
+handleWindows();
 
 const WINDOW_ANIMATION_TIME_MS = 300;
 
@@ -58,13 +63,12 @@ document.querySelectorAll(".navigate>a, #home a").forEach((link) => {
   });
 });
 
-const CLICK_AUDIO = new Audio("assets/sounds/click.wav");
-const WHOOSH_AUDIO = new Audio("assets/sounds/whoosh.wav");
-WHOOSH_AUDIO.volume = 0.6;
-
 document.querySelectorAll(".exit-button").forEach((button) => {
   button.addEventListener("click", () => {
-    WHOOSH_AUDIO.play();
+    let audio = new Audio("assets/sounds/whoosh.wav");
+    audio.volume = 0.6;
+    audio.play();
+
     let targetClassList = button.closest(".window").classList;
 
     targetClassList.remove("animate-window-in");
@@ -76,7 +80,8 @@ document.querySelectorAll(".exit-button").forEach((button) => {
 
 document.querySelectorAll("a").forEach((button) => {
   button.addEventListener("click", () => {
-    CLICK_AUDIO.play();
+    let audio = new Audio("assets/sounds/click.wav");
+    audio.play();
   });
 });
 
