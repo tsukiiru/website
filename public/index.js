@@ -107,6 +107,11 @@ const MUSIC = [
     name: "You Can Always Come Home",
     src: "assets/sounds/You\ Can\ Always\ Come\ Home.flac",
   },
+  {
+    artist: "far",
+    name: "128√e980",
+    src: "assets/sounds/128√e980.flac",
+  },
 ];
 
 let song_playing = false;
