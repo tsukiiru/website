@@ -100,7 +100,7 @@ const MUSIC = [
   },
   {
     artist: "Toby Fox",
-    name: "It's raining somewhere else",
+    name: "It's Raining Somewhere Else",
     src: "assets/sounds/It\'s\ Raining\ Somewhere\ Else.flac",
   },
   {
@@ -117,6 +117,11 @@ const MUSIC = [
     artist: "far",
     name: "128√e980",
     src: "assets/sounds/128√e980.flac",
+  },
+  {
+    artist: "Toby Fox, Itoki Hana",
+    name: "I Guess I'm In Love",
+    src: "assets/sounds/I\ Guess\ I\'m\ In\ Love.flac",
   },
 ];
 
