@@ -43,11 +43,162 @@ i {
   position: absolute;
   z-index: -1;
   width: 100%;
-  height: 100%;
+  height: 90%;
   object-fit: cover;
   inset: 0;
   filter: brightness(0.9);
   user-select: none;
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  user-select: none;
+  image-rendering: pixelated;
+  background-color: #535353;
+
+  > #bg {
+    position: absolute;
+    background: url(/assets/images/background/background.png) repeat-x 0 / 100%
+      auto;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    animation: looped_bg infinite 500000s linear;
+    z-index: 0;
+  }
+
+  > #buildings {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    > #layer-6 {
+      position: inherit;
+      background: url(/assets/images/background/buildings-6.png) repeat-x 0 /
+        100% auto;
+      width: 100%;
+      height: 90%;
+      background-size: cover;
+      animation: looped_layer_6 infinite 400000s linear;
+      z-index: 1;
+    }
+
+    > #layer-5 {
+      position: inherit;
+      background: url(/assets/images/background/buildings-5.png) repeat-x 0 /
+        100% auto;
+      width: 100%;
+      height: 90%;
+      background-size: cover;
+      animation: looped_layer_5 infinite 350000s linear;
+      z-index: 2;
+    }
+
+    > #layer-4 {
+      position: inherit;
+      background: url(/assets/images/background/buildings-4.png) repeat-x 0 /
+        100% auto;
+      width: 100%;
+      height: 90%;
+      background-size: cover;
+      animation: looped_layer_4 infinite 300000s linear;
+      z-index: 3;
+    }
+
+    > #layer-3 {
+      position: inherit;
+      background: url(/assets/images/background/buildings-3.png) repeat-x 0 /
+        100% auto;
+      width: 100%;
+      height: 90%;
+      background-size: cover;
+      animation: looped_layer_3 infinite 250000s linear;
+      z-index: 4;
+    }
+
+    > #layer-2 {
+      position: inherit;
+      background: url(/assets/images/background/buildings-2.png) repeat-x 0 /
+        100% auto;
+      width: 100%;
+      height: 90%;
+      background-size: cover;
+      animation: looped_layer_2 infinite 200000s linear;
+      z-index: 5;
+    }
+
+    > #layer-1 {
+      position: inherit;
+      background: url(/assets/images/background/buildings-1.png) repeat-x 0 /
+        100% auto;
+      width: 100%;
+      height: 90%;
+      background-size: cover;
+      animation: looped_layer_1 infinite 100000s linear;
+      z-index: 6;
+    }
+  }
+}
+
+@keyframes looped_bg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 10000000px 0;
+  }
+}
+
+@keyframes looped_layer_1 {
+  0% {
+    background-position: 10000000px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes looped_layer_2 {
+  0% {
+    background-position: 10000500px 0;
+  }
+  100% {
+    background-position: 500px 0;
+  }
+}
+@keyframes looped_layer_3 {
+  0% {
+    background-position: 10000350px 0;
+  }
+  100% {
+    background-position: 350px 0;
+  }
+}
+@keyframes looped_layer_4 {
+  0% {
+    background-position: 10000550px 0;
+  }
+  100% {
+    background-position: 550px 0;
+  }
+}
+@keyframes looped_layer_5 {
+  0% {
+    background-position: 10000150px 0;
+  }
+  100% {
+    background-position: 150px 0;
+  }
+}
+@keyframes looped_layer_6 {
+  0% {
+    background-position: 10000750px 0;
+  }
+  100% {
+    background-position: 750px 0;
+  }
 }
 
 .stack {
